@@ -169,3 +169,41 @@ function parallax(e) {
         }
     });
 })();
+
+
+/// for test
+
+const popup1 = document.querySelector(".popup1")
+const popup2 = document.querySelector(".popup2")
+const close = document.querySelector(".closePopup")
+
+popup1.addEventListener("click", () =>{
+    popup.classList.add("_opacity" , "_zIndex", "_first")
+    if (popup.classList.contains("_second")){
+        popup.classList.remove("_second")
+        popup.classList.add("_first")
+        return
+    }
+
+    // else{
+    //     popup.classList.add("_first")
+    // }
+
+})
+
+popup2.addEventListener("click", () =>{
+    popup.classList.add("_opacity" , "_zIndex", "_second");
+    if (popup.classList.contains("_first")){
+        popup.classList.add("_second")
+        popup.classList.remove("_first")
+    }
+
+})
+
+close.addEventListener("click", () =>{
+    if(popup.classList.contains("_opacity") && popup.classList.contains("_zIndex")){
+        popup.classList.remove("_opacity" , "_zIndex", "_second")
+    }
+})
+
+
