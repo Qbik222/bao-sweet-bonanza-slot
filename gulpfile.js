@@ -98,9 +98,9 @@ let gulp = require('gulp')
 
 // COPY MUSIC
     gulp.task('copyMusic', function(){
-        return gulp.src('front/music/**/*.mp3', {since: gulp.lastRun('copyMusic')})
-            .pipe(newer(('build/music')))
-            .pipe(gulp.dest('build/music'));
+        return gulp.src('front/**/*.mp3', {since: gulp.lastRun('copyMusic')})
+            .pipe(newer(('build/')))
+            .pipe(gulp.dest('build/'));
     });
 
 //BUILD
