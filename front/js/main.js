@@ -16,6 +16,7 @@ function playBackgroundMusic() {
 
 // так як сучасні браузери лочать автовідтворення музики на сайтах, вішаєм слухачі подій які запустять її
 document.addEventListener('mousemove', playBackgroundMusic, { once: true });
+document.addEventListener('mouseenter', playBackgroundMusic, { once: true });
 document.addEventListener('click', playBackgroundMusic, { once: true });
 document.addEventListener('touchstart', playBackgroundMusic, { once: true });
 playBackgroundMusic()
