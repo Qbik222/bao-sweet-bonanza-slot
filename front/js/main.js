@@ -4,10 +4,10 @@ const popup = document.querySelector(".popup");
 const popupBtn = document.querySelector(".popup__btn");
 
 // Ініціалізація звуків
-const backgroundMusic = new Audio('/music/music.mp3'); // фоновий звук, грає постійно
-const reelSound = new Audio('/music/reels.mp3'); // звук кручення колеса
-const reelStopSound = new Audio('/music/reel-stop.mp3'); // звук коли випадає сектор
-const popupSound = new Audio('/music/popup.mp3'); // звук для попапу
+const backgroundMusic = new Audio('./music/music.mp3'); // фоновий звук, грає постійно
+const reelSound = new Audio('./music/reels.mp3'); // звук кручення колеса
+const reelStopSound = new Audio('./music/reel-stop.mp3'); // звук коли випадає сектор
+const popupSound = new Audio('./music/popup.mp3'); // звук для попапу
 
 // Функція для запуску фонової музики
 function playBackgroundMusic() {
