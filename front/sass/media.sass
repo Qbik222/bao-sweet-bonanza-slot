@@ -258,30 +258,30 @@
       bottom: auto
       top: 100px
       max-width: 690px
-      right: 140px
+      right: 0
       z-index: -1
-      &::after
-        content: ""
-        display: block
-        width: 80%
-        height: 20%
-        position: absolute
-        bottom: 0
-        left: 50%
-        transform: translate(-50%, 0)
+      //&::after
+      //  content: ""
+      //  display: block
+      //  width: 80%
+      //  height: 10%
+      //  position: absolute
+      //  bottom: 0
+      //  left: 50%
+      //  transform: translate(-50%, 0)
         background: linear-gradient(0deg, $black 30%, rgba(0, 0, 0, 0) 100%)
-      picture
-        &::before
-          content: ""
-          display: block
-          width: 80%
-          height: 15%
-          position: absolute
-          bottom: 0
-          left: 50%
-          transform: translate(-50%, 0)
-          background: url("../img/noise.png")
-          z-index: 2
+      //picture
+      //  &::before
+      //    content: ""
+      //    display: block
+      //    width: 80%
+      //    height: 10%
+      //    position: absolute
+      //    bottom: 0
+      //    left: 50%
+      //    transform: translate(-50%, 0)
+      //    background: url("../img/noise.png")
+      //    z-index: 2
 
 
     &__plane
@@ -372,7 +372,7 @@
       margin: -50px auto 0 -90px
     &__pers
       max-width: 530px
-      right: 100px
+      //right: 100px
       top: 110px
   .popup
     &__container, &__money
@@ -439,7 +439,7 @@
     &__pers
       width: 100%
       max-width: 57vw
-      right: 60px
+      //right: 60px
       &::before
         top: 5%
         left: -4%
@@ -463,6 +463,8 @@
     &__wheel
       transform-origin: center left
       transform: scale(.87)
+    &__pers
+      top: 80px
 
 @media screen and (max-width: 810px) and (max-height: 990px)
   .popup
@@ -473,8 +475,8 @@
 
 @media screen and (max-width: 770px) and (orientation: portrait)
   .land
-    &__pers
-      right: 40px
+    //&__pers
+    //  right: 40px
     &__wheel
       transform: scale(.98)
   .popup
@@ -507,12 +509,16 @@
 
 @media screen and (max-width: 770px) and (orientation: portrait) and (max-height: 930px)
   .land
+    &__pers
+      max-width: 55vw
     &__wheel
       transform: scale(.85)
       margin: -20px auto auto 0
 
 @media screen and (max-width: 770px) and (orientation: portrait) and (max-height: 900px)
   .land
+    &__pers
+      max-width: 52vw
     &__wheel
       transform: scale(.82)
       margin: -40px auto auto 0
