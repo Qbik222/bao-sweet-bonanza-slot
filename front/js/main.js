@@ -14,6 +14,10 @@ function playBackgroundMusic() {
     backgroundMusic.play().catch(err => console.log(err));
 }
 
+backgroundMusic.addEventListener('ended', function() {
+    playBackgroundMusic();
+});
+
 // так як сучасні браузери лочать автовідтворення музики на сайтах, вішаєм слухачі подій які запустять її
 document.addEventListener('mousemove', playBackgroundMusic, { once: true });
 document.addEventListener('mouseenter', playBackgroundMusic, { once: true });
