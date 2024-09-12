@@ -96,8 +96,15 @@ let gulp = require('gulp')
             .pipe(gulp.dest('build/fonts'));
     });
 
+// COPY MUSIC
+    gulp.task('copyMusic', function(){
+        return gulp.src('front/music/**/*.mp3', {since: gulp.lastRun('copyMusic')})
+            .pipe(newer(('build/music')))
+            .pipe(gulp.dest('build/music'));
+    });
+
 //BUILD
-    gulp.task('build', gulp.series('clean', gulp.parallel('pug', 'sass', 'js', 'copyFonts', 'copyImg', 'copyJson')));
+    gulp.task('build', gulp.series('clean', gulp.parallel('pug', 'sass', 'js', 'copyFonts', 'copyImg', 'copyJson', 'copyMusic')));
 //STATIC SERVER
     gulp.task('server', function() {
         browserSync.init({
