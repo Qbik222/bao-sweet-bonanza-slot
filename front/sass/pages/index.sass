@@ -176,6 +176,7 @@ body
         background: url("../img/wheel/btn-bg-mob.png") no-repeat 0 0/contain
       &:hover
         cursor: pointer
+        animation-play-state: paused
         //animation: none
 
   &__pers
@@ -321,10 +322,12 @@ body
     padding: 30px 45px
     transition: background .8s ease
     pointer-events: initial
+    animation: pulseBtnPopup 2s ease-in-out infinite
     &:hover
       cursor: pointer
       background: linear-gradient(180deg, #39000D -0.72%, $red 89.01%)
       box-shadow: 0px -5.4px 0px 0px $red
+      animation-play-state: paused
 
     .first-win, .second-win
       color: $white
@@ -432,16 +435,22 @@ body
     opacity: .8
 
 @keyframes spinDecor
-  0%
+  0%, 100%
     transform: rotate(0deg)
-  100%
-    transform: rotate(360deg)
+  50%
+    transform: rotate(180deg)
 
 @keyframes pulseBtn
   0%, 100%
     transform: scale(1) translate(-50%, -50%)
   50%
     transform: scale(1.05) translate(-50%, -50%)
+
+@keyframes pulseBtnPopup
+  0%, 100%
+    transform: scale(1)
+  50%
+    transform: scale(1.05)
 
 @keyframes fadeInPlane
   0%

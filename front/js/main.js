@@ -34,15 +34,22 @@ function spinWheel(wheel, anim, position, popup, btn) {
     wheel.classList.add(anim);
 
     //звук кручення колеса
-    reelSound.play();
+    setTimeout(() =>{
+        reelSound.play();
+    }, 1000)
+
+    // Зупиняємо звук кручення колеса
+    setTimeout(() =>{
+        reelSound.pause();
+        reelSound.currentTime = 0;
+    }, 4800)
+
 
     wheel.addEventListener("animationend", () => {
         wheel.classList.remove(anim);
         wheel.style.transform = `rotate(${position}deg)`;
 
-        // Зупиняємо звук кручення колеса
-        reelSound.pause();
-        reelSound.currentTime = 0;
+
 
         // звук зупинки колеса
         reelStopSound.play();
@@ -50,8 +57,11 @@ function spinWheel(wheel, anim, position, popup, btn) {
         popup.classList.add("_opacity", "_zIndex");
         btn.classList.add("_btnPulse");
 
-        // Відтворюємо звук для попапу
-        popupSound.play();
+
+        setTimeout(() =>{
+            // Відтворюємо звук для попапу
+            popupSound.play();
+        }, 600)
 
     }, { once: true });
 }
