@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             }
         })();
 
-        // // звук кручення колеса
+        // // звук кручення колеса варіант без промісів
         // setTimeout(() =>{
         //     reelSound.play();
         //     setTimeout(() =>{
@@ -92,61 +92,6 @@ document.addEventListener("DOMContentLoaded", () =>{
         //         }, 1400)
         //     },3400);
         // },1000)
-
-        // setTimeout(() =>{
-        //     reelSound.play();
-        //     setTimeout(function () {
-        //
-        //         setTimeout(function () {
-        //             reelSound.pause();
-        //             reelSound.currentTime = 0;
-        //             setTimeout(() =>{
-        //                 reelStopSound.play();
-        //                 setTimeout(function () {
-        //                     popupSound.play();
-        //                 }, 600);
-        //             }, 1800);
-        //         }, 1000)
-        //     }, 3000);
-        // }, 1000)
-
-
-
-        // reelSound.play().then(() => {
-        //     // Дочекавшись дозволу браузера на відтворення
-        // }).catch(err => {
-        //     // Помилка відтворення, можна обробити
-        //     console.error("Помилка відтворення звуку: ", err);
-        // });
-
-        // // Зупиняємо звук кручення колеса
-        // setTimeout(() =>{
-        //     reelSound.pause();
-        //     reelSound.currentTime = 0;
-        //     setTimeout(() =>{
-        //         // звук зупинки колеса
-        //         reelStopSound.play();
-        //         setTimeout(() =>{
-        //             // Відтворюємо звук для попапу
-        //             popupSound.play();
-        //         }, 600)
-        //     }, 1800)
-        // }, 4800)
-
-        // async function playSounds() {
-        //     reelSound.pause();
-        //     reelSound.currentTime = 0;
-        //     await sleep(1800);
-        //
-        //     // звук зупинки колеса
-        //     reelStopSound.play();
-        //     await sleep(600);
-        //
-        //     // Відтворюємо звук для попапу
-        //     popupSound.play();
-        // }
-        // setTimeout(playSounds, 4800);
-
 
         wheel.addEventListener("animationend", () => {
             wheel.classList.remove(anim);
