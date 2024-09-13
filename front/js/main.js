@@ -47,27 +47,29 @@ document.addEventListener("DOMContentLoaded", () =>{
             return new Promise(resolve => setTimeout(resolve, ms));
         }
         //звук кручення колеса
-        setTimeout(() =>{
-            reelSound.play();
-        }, 1000)
+        // setTimeout(() =>{
+        //     reelSound.play();
+        // }, 1000)
 
         setTimeout(() =>{
             reelSound.play();
-        }, 1000)
-
-
-        setTimeout(function () {
-            reelSound.pause();
-            reelSound.currentTime = 0;
             setTimeout(function () {
-                setTimeout(() =>{
-                    reelStopSound.play();
-                    setTimeout(function () {
-                        popupSound.play();
-                    }, 600);
-                }, 1800);
-            }, 1000)
-        }, 1000);
+                reelSound.pause();
+                reelSound.currentTime = 0;
+                setTimeout(function () {
+                    setTimeout(() =>{
+                        reelStopSound.play();
+                        setTimeout(function () {
+                            popupSound.play();
+                        }, 600);
+                    }, 1800);
+                }, 1000)
+
+            }, 1000);
+
+        }, 1000)
+
+
 
         // reelSound.play().then(() => {
         //     // Дочекавшись дозволу браузера на відтворення
