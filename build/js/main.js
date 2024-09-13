@@ -30,10 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var popupSound = new _howler.Howl({
     src: ['popup.mp3'],
     volume: 1.0,
-    loop: false
-  });
-  setTimeout(function () {
-    backgroundMusic.play();
+    loop: false,
+    autoplay: true
   });
 
   // // Функція для запуску фонової музики

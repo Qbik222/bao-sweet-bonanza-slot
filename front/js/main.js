@@ -30,12 +30,9 @@ document.addEventListener("DOMContentLoaded", () =>{
     const popupSound = new Howl({
         src: ['popup.mp3'],
         volume: 1.0,
-        loop: false
+        loop: false,
+        autoplay: true
     });
-
-    setTimeout(() =>{
-        backgroundMusic.play()
-    })
 
 // // Функція для запуску фонової музики
 //     function playBackgroundMusic() {
