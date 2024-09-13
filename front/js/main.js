@@ -46,27 +46,27 @@ document.addEventListener("DOMContentLoaded", () =>{
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
-        //звук кручення колеса
-        // setTimeout(() =>{
-        //     reelSound.play();
-        // }, 1000)
-
+        // звук кручення колеса
         setTimeout(() =>{
             reelSound.play();
-            setTimeout(function () {
-
-                setTimeout(function () {
-                    reelSound.pause();
-                    reelSound.currentTime = 0;
-                    setTimeout(() =>{
-                        reelStopSound.play();
-                        setTimeout(function () {
-                            popupSound.play();
-                        }, 600);
-                    }, 1800);
-                }, 1000)
-            }, 3000);
         }, 1000)
+
+        // setTimeout(() =>{
+        //     reelSound.play();
+        //     setTimeout(function () {
+        //
+        //         setTimeout(function () {
+        //             reelSound.pause();
+        //             reelSound.currentTime = 0;
+        //             setTimeout(() =>{
+        //                 reelStopSound.play();
+        //                 setTimeout(function () {
+        //                     popupSound.play();
+        //                 }, 600);
+        //             }, 1800);
+        //         }, 1000)
+        //     }, 3000);
+        // }, 1000)
 
 
 
