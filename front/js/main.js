@@ -229,3 +229,20 @@ function getDeviceInfo() {
 }
 
 getDeviceInfo();
+
+
+function getDevicePixelRatio() {
+    return window.devicePixelRatio || 1;
+}
+
+function getPhysicalScreenSize() {
+    const devicePixelRatio = getDevicePixelRatio();
+    const physicalWidth = window.screen.width * devicePixelRatio;
+    const physicalHeight = window.screen.height * devicePixelRatio;
+
+    console.log("Фізичний розмір екрану:");
+    console.log("Ширина:", physicalWidth + "px");
+    console.log("Висота:", physicalHeight + "px");
+}
+
+getPhysicalScreenSize();
