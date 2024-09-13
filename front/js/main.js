@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                         popupSound.play();
                     }, 600);
                 }, 1800);
-            }, 4800);
+            }, 800);
         }).catch(err => {
             // Помилка відтворення, можна обробити
             console.error("Помилка відтворення звуку: ", err);
