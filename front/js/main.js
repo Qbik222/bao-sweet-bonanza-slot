@@ -60,12 +60,15 @@ document.addEventListener("DOMContentLoaded", () =>{
             reelSound.pause();
             reelSound.currentTime = 0;
             setTimeout(function () {
-                reelStopSound.play();
-                setTimeout(function () {
-                    popupSound.play();
-                }, 600);
-            }, 1800);
-        }, 800);
+                setTimeout(() =>{
+                    reelStopSound.play();
+                    setTimeout(function () {
+                        popupSound.play();
+                    }, 600);
+                }, 1800);
+            }, 1000)
+
+        }, 1000);
 
         // reelSound.play().then(() => {
         //     // Дочекавшись дозволу браузера на відтворення
