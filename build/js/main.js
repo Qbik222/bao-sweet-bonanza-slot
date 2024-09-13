@@ -38,22 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // // так як сучасні браузери лочать автовідтворення музики на сайтах, вішаєм слухачі подій які запустять її
-  document.addEventListener('mousemove', function () {
-    return backgroundMusic.play();
-  }, {
-    once: true
-  });
-  document.addEventListener('mouseenter', function () {
-    return backgroundMusic.play();
-  }, {
-    once: true
-  });
   document.addEventListener('click', function () {
-    return backgroundMusic.play();
-  }, {
-    once: true
-  });
-  document.addEventListener('touchstart', function () {
     return backgroundMusic.play();
   }, {
     once: true

@@ -35,10 +35,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     });
 
 // // так як сучасні браузери лочать автовідтворення музики на сайтах, вішаєм слухачі подій які запустять її
-    document.addEventListener('mousemove',   () => backgroundMusic.play(), { once: true });
-    document.addEventListener('mouseenter',   () => backgroundMusic.play(), { once: true });
     document.addEventListener('click',   () => backgroundMusic.play(), { once: true });
-    document.addEventListener('touchstart',   () => backgroundMusic.play(), { once: true });
     backgroundMusic.play()
 
     popupBtn.addEventListener("click", () => {
