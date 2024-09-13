@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 // // так як сучасні браузери лочать автовідтворення музики на сайтах, вішаєм слухачі подій які запустять її
     document.addEventListener('click',   () => backgroundMusic.play(), { once: true });
-    backgroundMusic.play()
+    // backgroundMusic.play()
 
     popupBtn.addEventListener("click", () => {
         if (popup.classList.contains("_first")) {

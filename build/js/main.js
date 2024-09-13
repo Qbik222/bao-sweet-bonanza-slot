@@ -43,7 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }, {
     once: true
   });
-  backgroundMusic.play();
+  // backgroundMusic.play()
+
   popupBtn.addEventListener("click", function () {
     if (popup.classList.contains("_first")) {
       popup.classList.remove("_opacity", "_zIndex");
