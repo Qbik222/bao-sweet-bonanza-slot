@@ -52,7 +52,10 @@ document.addEventListener("DOMContentLoaded", () =>{
             setTimeout(() =>{
                     reelSound.pause();
                     reelSound.currentTime = 0;
-            },3000);
+            },3400);
+            setTimeout(() =>{
+                reelStopSound.play();
+            }, 3800)
         },1000)
 
         // setTimeout(() =>{
