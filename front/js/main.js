@@ -38,36 +38,34 @@ let spinCounter = 0;
 function spinWheel(wheel, anim, position, popup, btn) {
     wheel.classList.add(anim);
 
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
     //звук кручення колеса
     setTimeout(() =>{
         reelSound.play();
     }, 1000)
 
-    // Зупиняємо звук кручення колеса
-    setTimeout(() =>{
+    async function playSounds() {
         reelSound.pause();
         reelSound.currentTime = 0;
-    }, 4800)
+        await sleep(1800);
+
+        // звук зупинки колеса
+        reelStopSound.play();
+        await sleep(600);
+
+        // Відтворюємо звук для попапу
+        popupSound.play();
+    }
+    setTimeout(playSounds, 4800);
 
 
     wheel.addEventListener("animationend", () => {
         wheel.classList.remove(anim);
         wheel.style.transform = `rotate(${position}deg)`;
-
-
-
-        // звук зупинки колеса
-        reelStopSound.play();
-
         popup.classList.add("_opacity", "_zIndex");
         btn.classList.add("_btnPulse");
-
-
-        setTimeout(() =>{
-            // Відтворюємо звук для попапу
-            popupSound.play();
-        }, 600)
-
     }, { once: true });
 }
 
