@@ -54,9 +54,11 @@ document.addEventListener("DOMContentLoaded", () =>{
                 reelSound.currentTime = 0;
                 setTimeout(() =>{
                     reelStopSound.play();
-                }, 400)
+                    setTimeout(() =>{
+                        popupSound.play();
+                    }, 800)
+                }, 800)
             },3400);
-
         },1000)
 
         // setTimeout(() =>{
