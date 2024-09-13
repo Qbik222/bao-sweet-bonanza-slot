@@ -205,3 +205,27 @@ close.addEventListener("click", () =>{
 })
 
 
+
+
+function getDeviceInfo() {
+    // Отримуємо розширення екрану
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+
+    // Отримуємо інформацію про операційну систему
+    const userAgent = navigator.userAgent;
+    let os = "Unknown OS";
+
+    if (userAgent.indexOf("Win") !== -1) os = "Windows";
+    else if (userAgent.indexOf("Mac") !== -1) os = "MacOS";
+    else if (userAgent.indexOf("X11") !== -1) os = "UNIX";
+    else if (userAgent.indexOf("Linux") !== -1) os = "Linux";
+    else if (userAgent.indexOf("Android") !== -1) os = "Android";
+    else if (userAgent.indexOf("like Mac") !== -1) os = "iOS";
+
+    // Виводимо інформацію в консоль
+    console.log("Операційна система:", os);
+    console.log("Розширення екрану:", screenWidth + "x" + screenHeight);
+}
+
+getDeviceInfo();
