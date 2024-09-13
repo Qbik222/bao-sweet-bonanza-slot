@@ -55,19 +55,37 @@ document.addEventListener("DOMContentLoaded", () =>{
             reelSound.play();
         }, 1000)
 
-        // Зупиняємо звук кручення колеса
-        setTimeout(() =>{
-            reelSound.pause();
-            reelSound.currentTime = 0;
-            setTimeout(() =>{
-                // звук зупинки колеса
-                reelStopSound.play();
-                setTimeout(() =>{
-                    // Відтворюємо звук для попапу
-                    popupSound.play();
-                }, 600)
-            }, 1800)
-        }, 4800)
+        reelSound.play().then(() => {
+            // Дочекавшись дозволу браузера на відтворення
+            setTimeout(function () {
+                reelSound.pause();
+                reelSound.currentTime = 0;
+
+                setTimeout(function () {
+                    reelStopSound.play();
+                    setTimeout(function () {
+                        popupSound.play();
+                    }, 600);
+                }, 1800);
+            }, 4800);
+        }).catch(err => {
+            // Помилка відтворення, можна обробити
+            console.error("Помилка відтворення звуку: ", err);
+        });
+
+        // // Зупиняємо звук кручення колеса
+        // setTimeout(() =>{
+        //     reelSound.pause();
+        //     reelSound.currentTime = 0;
+        //     setTimeout(() =>{
+        //         // звук зупинки колеса
+        //         reelStopSound.play();
+        //         setTimeout(() =>{
+        //             // Відтворюємо звук для попапу
+        //             popupSound.play();
+        //         }, 600)
+        //     }, 1800)
+        // }, 4800)
 
         // async function playSounds() {
         //     reelSound.pause();
