@@ -49,7 +49,11 @@ document.addEventListener("DOMContentLoaded", () =>{
         // звук кручення колеса
         setTimeout(() =>{
             reelSound.play();
-        }, 1000)
+            setTimeout(() =>{
+                    reelSound.pause();
+                    reelSound.currentTime = 0;
+            },3000);
+        },1000)
 
         // setTimeout(() =>{
         //     reelSound.play();
