@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             wheel.style.transform = `rotate(${position}deg)`;
             popup.classList.add("_opacity", "_zIndex");
             btn.classList.add("_btnPulse");
+            document.querySelector(".first-win").style.animationPlayState = "initial"
         }, { once: true });
     }
 
@@ -182,6 +183,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     popup1.addEventListener("click", () =>{
         popup.classList.add("_opacity" , "_zIndex", "_first")
+        document.querySelector(".first-win").style.animationPlayState = "initial"
         if (popup.classList.contains("_second")){
             popup.classList.remove("_second")
             popup.classList.add("_first")
@@ -196,6 +198,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     popup2.addEventListener("click", () =>{
         popup.classList.add("_opacity" , "_zIndex", "_second");
+        document.querySelector(".first-win").style.animationPlayState = "initial"
         if (popup.classList.contains("_first")){
             popup.classList.add("_second")
             popup.classList.remove("_first")

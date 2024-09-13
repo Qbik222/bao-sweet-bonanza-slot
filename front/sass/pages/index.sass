@@ -273,25 +273,33 @@ body
     .first-win, .second-win
       display: none
 
+
+
   &._first
     .popup
       &__icon
-        animation: spinDecor 12s linear infinite
         max-width: 220px
+        .first-win
+          animation: spinDecor 12s linear infinite
+          animation-play-state: paused
+
       &__first
         &-text
           display: block
       &__icon, &__btn
         .first-win
           display: block
+
   &._second
     .popup
       &__second
         &-text
           display: block
       &__icon, &__btn
+        animation-play-state: initial
         .second-win
           display: block
+
       &__icon
         .second-win
           max-width: 335px
