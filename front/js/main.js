@@ -55,23 +55,24 @@ document.addEventListener("DOMContentLoaded", () =>{
             reelSound.play();
         }, 1000)
 
-        reelSound.play().then(() => {
-            // Дочекавшись дозволу браузера на відтворення
-            setTimeout(function () {
-                reelSound.pause();
-                reelSound.currentTime = 0;
 
+        setTimeout(function () {
+            reelSound.pause();
+            reelSound.currentTime = 0;
+            setTimeout(function () {
+                reelStopSound.play();
                 setTimeout(function () {
-                    reelStopSound.play();
-                    setTimeout(function () {
-                        popupSound.play();
-                    }, 600);
-                }, 1800);
-            }, 800);
-        }).catch(err => {
-            // Помилка відтворення, можна обробити
-            console.error("Помилка відтворення звуку: ", err);
-        });
+                    popupSound.play();
+                }, 600);
+            }, 1800);
+        }, 800);
+
+        // reelSound.play().then(() => {
+        //     // Дочекавшись дозволу браузера на відтворення
+        // }).catch(err => {
+        //     // Помилка відтворення, можна обробити
+        //     console.error("Помилка відтворення звуку: ", err);
+        // });
 
         // // Зупиняємо звук кручення колеса
         // setTimeout(() =>{
