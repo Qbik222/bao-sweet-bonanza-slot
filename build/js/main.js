@@ -32,7 +32,9 @@ document.addEventListener("DOMContentLoaded", function () {
     volume: 1.0,
     loop: false
   });
-  backgroundMusic.play();
+  setTimeout(function () {
+    backgroundMusic.play();
+  });
 
   // // Функція для запуску фонової музики
   //     function playBackgroundMusic() {
