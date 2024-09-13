@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () =>{
                     }, 600);
                 }, 1800);
             }, 1000)
-
         }, 1000);
 
         // reelSound.play().then(() => {
