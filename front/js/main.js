@@ -50,12 +50,13 @@ document.addEventListener("DOMContentLoaded", () =>{
         setTimeout(() =>{
             reelSound.play();
             setTimeout(() =>{
-                    reelSound.pause();
-                    reelSound.currentTime = 0;
+                reelSound.pause();
+                reelSound.currentTime = 0;
+                setTimeout(() =>{
+                    reelStopSound.play();
+                }, 400)
             },3400);
-            setTimeout(() =>{
-                reelStopSound.play();
-            }, 3800)
+
         },1000)
 
         // setTimeout(() =>{
