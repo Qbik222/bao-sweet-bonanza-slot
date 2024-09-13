@@ -270,6 +270,8 @@
         height: 25%
       &::before
         width: 60%
+    &__plane
+      animation: none
     &__pers
       bottom: auto
       top: 100px
@@ -447,6 +449,8 @@
       width: 960px
       height: 300px
   .popup
+    &__container
+      transform-origin: top
     &__container, &__money
       transform: scale(.6)
     &__pers
@@ -485,8 +489,6 @@
     &__pers
       max-width: 345px
       top: 15%
-    &__container
-      transform-origin: top
     &__money
       margin-bottom: -120px
       top: -130px
@@ -547,8 +549,8 @@
     &__wheel
       transform: scale(.37)
       margin: 120px auto 0 -460px
-    &__plane
-      animation: none
+    //&__plane
+    //  animation: none
       right: -70%
     &__footer
       bottom: 15px
