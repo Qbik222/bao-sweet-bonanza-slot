@@ -56,16 +56,16 @@ document.addEventListener("DOMContentLoaded", () =>{
             setTimeout(function () {
 
                 setTimeout(function () {
+                    reelSound.pause();
+                    reelSound.currentTime = 0;
                     setTimeout(() =>{
-                        reelSound.pause();
-                        reelSound.currentTime = 0;
                         reelStopSound.play();
                         setTimeout(function () {
                             popupSound.play();
                         }, 600);
                     }, 1800);
-                }, 3000)
-            }, 1000);
+                }, 1000)
+            }, 3000);
         }, 1000)
 
 
