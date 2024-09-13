@@ -51,19 +51,37 @@ document.addEventListener("DOMContentLoaded", () =>{
             reelSound.play();
         }, 1000)
 
-        async function playSounds() {
+        setTimeout(() =>{
+            reelSound.play();
+        }, 1000)
+
+        // Зупиняємо звук кручення колеса
+        setTimeout(() =>{
             reelSound.pause();
             reelSound.currentTime = 0;
-            await sleep(1800);
+            setTimeout(() =>{
+                // звук зупинки колеса
+                reelStopSound.play();
+                setTimeout(() =>{
+                    // Відтворюємо звук для попапу
+                    popupSound.play();
+                }, 600)
+            }, 1800)
+        }, 4800)
 
-            // звук зупинки колеса
-            reelStopSound.play();
-            await sleep(600);
-
-            // Відтворюємо звук для попапу
-            popupSound.play();
-        }
-        setTimeout(playSounds, 4800);
+        // async function playSounds() {
+        //     reelSound.pause();
+        //     reelSound.currentTime = 0;
+        //     await sleep(1800);
+        //
+        //     // звук зупинки колеса
+        //     reelStopSound.play();
+        //     await sleep(600);
+        //
+        //     // Відтворюємо звук для попапу
+        //     popupSound.play();
+        // }
+        // setTimeout(playSounds, 4800);
 
 
         wheel.addEventListener("animationend", () => {
@@ -211,12 +229,6 @@ document.addEventListener("DOMContentLoaded", () =>{
             popup.classList.remove("_opacity" , "_zIndex", "_second")
         }
     })
-
-
-    function getDevicePixelRatio() {
-        return window.devicePixelRatio || 1;
-    }
-
 
 })
 
