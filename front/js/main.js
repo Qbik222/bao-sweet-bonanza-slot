@@ -46,20 +46,59 @@ document.addEventListener("DOMContentLoaded", () =>{
         function sleep(ms) {
             return new Promise(resolve => setTimeout(resolve, ms));
         }
-        // звук кручення колеса
-        setTimeout(() =>{
-            reelSound.play();
-            setTimeout(() =>{
+
+
+        async function playSounds() {
+            try {
+                // Затримка перед початком (1000 мс)
+                await sleep(1000);
+
+                // Відтворення звуку кручення колеса
+                await reelSound.play();
+
+                // Затримка (3400 мс) перед паузою
+                await sleep(3400);
+
+                // Зупинка звуку кручення колеса
                 reelSound.pause();
                 reelSound.currentTime = 0;
-                setTimeout(() =>{
-                    reelStopSound.play();
-                    setTimeout(() =>{
-                        popupSound.play();
-                    }, 800)
-                }, 1400)
-            },3400);
-        },1000)
+
+                // Затримка перед звуком зупинки колеса (1400 мс)
+                await sleep(1400);
+
+                // Відтворення звуку зупинки колеса
+                await reelStopSound.play();
+
+                // Затримка перед відтворенням звуку попапу (800 мс)
+                await sleep(800);
+
+                // Відтворення звуку для попапу
+                await popupSound.play();
+
+            } catch (error) {
+                console.error("Помилка при відтворенні звуків: ", error);
+            }
+        }
+
+// Виклик функції
+        playSounds();
+
+
+
+        // // звук кручення колеса
+        // setTimeout(() =>{
+        //     reelSound.play();
+        //     setTimeout(() =>{
+        //         reelSound.pause();
+        //         reelSound.currentTime = 0;
+        //         setTimeout(() =>{
+        //             reelStopSound.play();
+        //             setTimeout(() =>{
+        //                 popupSound.play();
+        //             }, 800)
+        //         }, 1400)
+        //     },3400);
+        // },1000)
 
         // setTimeout(() =>{
         //     reelSound.play();
