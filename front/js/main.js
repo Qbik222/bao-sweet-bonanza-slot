@@ -1,6 +1,9 @@
+import {Howl} from "howler"
+
+
 document.addEventListener("DOMContentLoaded", () =>{
 
-    window.addEventListener('resize', () => window.location.reload());
+    window.addEventListener('orientationchange', () => window.location.reload());
 
     const wheelBtn = document.querySelector(".land__wheel-btn");
     const wheelSector = document.querySelector(".land__wheel-sector");
@@ -9,26 +12,44 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 
 // Ініціалізація звуків
-    const backgroundMusic = new Audio('music.mp3'); // фоновий звук, грає постійно
-    const reelSound = new Audio('reels.mp3'); // звук кручення колеса
-    const reelStopSound = new Audio('reel-stop.mp3'); // звук коли випадає сектор
-    const popupSound = new Audio('popup.mp3'); // звук для попапу
-
-// Функція для запуску фонової музики
-    function playBackgroundMusic() {
-        backgroundMusic.play().catch(err => console.log(err));
-    }
-
-    backgroundMusic.addEventListener('ended', function() {
-        playBackgroundMusic();
+    const backgroundMusic = new Howl({
+        src: ['music.mp3'],
+        volume: 1.0,
+        loop: true
+    });
+    const reelSound = new Howl({
+        src: ['reels.mp3'],
+        volume: 1.0,
+        loop: true
+    });
+    const reelStopSound = new Howl({
+        src: ['reel-stop.mp3'],
+        volume: 1.0,
+        loop: false
+    });
+    const popupSound = new Howl({
+        src: ['popup.mp3'],
+        volume: 1.0,
+        loop: false
     });
 
-// так як сучасні браузери лочать автовідтворення музики на сайтах, вішаєм слухачі подій які запустять її
-    document.addEventListener('mousemove', playBackgroundMusic, { once: true });
-    document.addEventListener('mouseenter', playBackgroundMusic, { once: true });
-    document.addEventListener('click', playBackgroundMusic, { once: true });
-    document.addEventListener('touchstart', playBackgroundMusic, { once: true });
-    playBackgroundMusic()
+    backgroundMusic.play()
+
+// // Функція для запуску фонової музики
+//     function playBackgroundMusic() {
+//         backgroundMusic.play().catch(err => console.log(err));
+//     }
+//
+//     backgroundMusic.addEventListener('ended', function() {
+//         playBackgroundMusic();
+//     });
+
+// // так як сучасні браузери лочать автовідтворення музики на сайтах, вішаєм слухачі подій які запустять її
+//     document.addEventListener('mousemove', playBackgroundMusic, { once: true });
+//     document.addEventListener('mouseenter', playBackgroundMusic, { once: true });
+//     document.addEventListener('click', playBackgroundMusic, { once: true });
+//     document.addEventListener('touchstart', playBackgroundMusic, { once: true });
+//     playBackgroundMusic()
 
     popupBtn.addEventListener("click", () => {
         if (popup.classList.contains("_first")) {
@@ -43,55 +64,55 @@ document.addEventListener("DOMContentLoaded", () =>{
     function spinWheel(wheel, anim, position, popup, btn) {
         wheel.classList.add(anim);
 
-        function delaySound(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
-        (async function playSounds() {
-            try {
-                // Затримка перед початком (1000 мс)
-                await delaySound(1000);
-
-                // Відтворення звуку кручення колеса
-                await reelSound.play();
-
-                // Затримка (3400 мс) перед паузою
-                await delaySound(3400);
-
-                // Зупинка звуку кручення колеса
-                reelSound.pause();
-                reelSound.currentTime = 0;
-
-                // Затримка перед звуком зупинки колеса (1400 мс)
-                await delaySound(1400);
-
-                // Відтворення звуку зупинки колеса
-                await reelStopSound.play();
-
-                // Затримка перед відтворенням звуку попапу (800 мс)
-                await delaySound(800);
-
-                // Відтворення звуку для попапу
-                await popupSound.play();
-
-            } catch (error) {
-                console.error("Помилка при відтворенні звуків: ", error);
-            }
-        })();
-
-        // // звук кручення колеса варіант без промісів
-        // setTimeout(() =>{
-        //     reelSound.play();
-        //     setTimeout(() =>{
+        // function delaySound(ms) {
+        //     return new Promise(resolve => setTimeout(resolve, ms));
+        // }
+        // (async function playSounds() {
+        //     try {
+        //         // Затримка перед початком (1000 мс)
+        //         await delaySound(1000);
+        //
+        //         // Відтворення звуку кручення колеса
+        //         await reelSound.play();
+        //
+        //         // Затримка (3400 мс) перед паузою
+        //         await delaySound(3400);
+        //
+        //         // Зупинка звуку кручення колеса
         //         reelSound.pause();
         //         reelSound.currentTime = 0;
-        //         setTimeout(() =>{
-        //             reelStopSound.play();
-        //             setTimeout(() =>{
-        //                 popupSound.play();
-        //             }, 800)
-        //         }, 1400)
-        //     },3400);
-        // },1000)
+        //
+        //         // Затримка перед звуком зупинки колеса (1400 мс)
+        //         await delaySound(1400);
+        //
+        //         // Відтворення звуку зупинки колеса
+        //         await reelStopSound.play();
+        //
+        //         // Затримка перед відтворенням звуку попапу (800 мс)
+        //         await delaySound(800);
+        //
+        //         // Відтворення звуку для попапу
+        //         await popupSound.play();
+        //
+        //     } catch (error) {
+        //         console.error("Помилка при відтворенні звуків: ", error);
+        //     }
+        // })();
+
+        // звук кручення колеса варіант без промісів
+        setTimeout(() =>{
+            reelSound.play();
+            setTimeout(() =>{
+                reelSound.pause();
+                reelSound.currentTime = 0;
+                setTimeout(() =>{
+                    reelStopSound.play();
+                    setTimeout(() =>{
+                        popupSound.play();
+                    }, 800)
+                }, 1400)
+            },3400);
+        },1000)
 
         wheel.addEventListener("animationend", () => {
             wheel.classList.remove(anim);
