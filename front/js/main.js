@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () =>{
                     setTimeout(() =>{
                         popupSound.play();
                     }, 800)
-                }, 800)
+                }, 1400)
             },3400);
         },1000)
 
