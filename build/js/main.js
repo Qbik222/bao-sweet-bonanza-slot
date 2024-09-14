@@ -43,8 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }, {
     once: true
   });
-  // backgroundMusic.play()
-
   popupBtn.addEventListener("click", function () {
     if (popup.classList.contains("_first")) {
       popup.classList.remove("_opacity", "_zIndex");
@@ -109,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return playSounds;
     })()();
 
-    // // звук кручення колеса варіант без промісів
+    // // таймінги звуків, варіант без промісів
     // setTimeout(() =>{
     //     reelSound.play();
     //     setTimeout(() =>{
@@ -218,38 +216,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   })();
-
-  /// for test
-
-  var popup1 = document.querySelector(".popup1");
-  var popup2 = document.querySelector(".popup2");
-  var close = document.querySelector(".closePopup");
-  popup1.addEventListener("click", function () {
-    popup.classList.add("_opacity", "_zIndex", "_first");
-    document.querySelector(".first-win").style.animationPlayState = "initial";
-    if (popup.classList.contains("_second")) {
-      popup.classList.remove("_second");
-      popup.classList.add("_first");
-      return;
-    }
-
-    // else{
-    //     popup.classList.add("_first")
-    // }
-  });
-  popup2.addEventListener("click", function () {
-    popup.classList.add("_opacity", "_zIndex", "_second");
-    document.querySelector(".first-win").style.animationPlayState = "initial";
-    if (popup.classList.contains("_first")) {
-      popup.classList.add("_second");
-      popup.classList.remove("_first");
-    }
-  });
-  close.addEventListener("click", function () {
-    if (popup.classList.contains("_opacity") && popup.classList.contains("_zIndex")) {
-      popup.classList.remove("_opacity", "_zIndex", "_second");
-    }
-  });
 });
 
 },{"howler":2}],2:[function(require,module,exports){

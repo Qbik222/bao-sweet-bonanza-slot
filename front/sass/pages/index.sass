@@ -1,27 +1,10 @@
-$blue: #000055
 $white: #ffffff
-$magenta: #FF267E
-$green: #3AFFC3
 $black: #090909
 $red: #D0133E
 
 $font-drukcyr-heavy: DrukCyr-Heavy, sans-serif
 $font-drukcyr-med: DrukCyr-Medium, sans-serif
 $font-roadradio-bold: roadradio-bold, sans-serif
-
-
-.popup1, .popup2, .closePopup
-  position: absolute
-  top: 0
-  left: 0
-  width: 60px
-  height: 20px
-  z-index: 20
-.popup2
-  top: 21px
-
-.closePopup
-  top: 41px
 
 ._hidden
   display: none !important
@@ -31,8 +14,6 @@ $font-roadradio-bold: roadradio-bold, sans-serif
 
 ._zIndex
   z-index: 10 !important
-//._zIndexLink
-//  z-index: 20 !important
 
 ._btnPulse
   animation: pulseBtn 3s ease-in-out infinite
@@ -44,7 +25,6 @@ $font-roadradio-bold: roadradio-bold, sans-serif
   height: 100%
   left: 0
   top: 0
-
 
 body
   overscroll-behavior: none
@@ -63,7 +43,6 @@ body
   justify-content: flex-start
   max-height: 100%
   height: 100%
-  //min-height: 100vh
   padding: 175px 0 50px 40px
   overflow: hidden
   z-index: 10
@@ -93,7 +72,6 @@ body
       background: url("../img/propeller-bg.png") no-repeat 0 0/contain
       width: 55%
       height: 55%
-
   &__logo
     position: absolute
     top: 50px
@@ -117,7 +95,6 @@ body
       color: $red
       font-family: $font-roadradio-bold
       font-size: 64px
-
   &__wheel
     width: 910px
     height: 910px
@@ -192,8 +169,6 @@ body
       &:hover
         cursor: pointer
         animation-play-state: paused
-        //animation: none
-
   &__pers
     position: absolute
     bottom: -20vh
@@ -220,7 +195,6 @@ body
     bottom: -8%
     transform: perspective(600px) translate3d(0px, 0px, 0px)
     will-change: transform
-    //transform: perspective(600px) translate3d(-400px, 0, -600px)
     animation: fadeInPlane 1.7s ease-out
     @media screen and (max-width: 1300px) and (orientation: portrait)
       background: url("../img/plane-tab.png") no-repeat 0 0/contain
@@ -242,7 +216,6 @@ body
     max-width: 513px
     max-height: 23px
     z-index: 3
-
 
 .popup
   width: 100%
@@ -272,9 +245,6 @@ body
   &__icon, &__btn
     .first-win, .second-win
       display: none
-
-
-
   &._first
     .popup
       &__icon
@@ -282,14 +252,12 @@ body
         .first-win
           animation: spinDecor 12s linear infinite
           animation-play-state: paused
-
       &__first
         &-text
           display: block
       &__icon, &__btn
         .first-win
           display: block
-
   &._second
     .popup
       &__second
@@ -299,7 +267,6 @@ body
         animation-play-state: initial
         .second-win
           display: block
-
       &__icon
         .second-win
           max-width: 335px
@@ -351,9 +318,7 @@ body
     &:hover
       cursor: pointer
       background: linear-gradient(180deg, #39000D -0.72%, $red 89.01%)
-      //box-shadow: 0px -5.4px 0px 0px $red
       animation-play-state: paused
-
     .first-win, .second-win
       color: $white
       width: 100%
@@ -400,11 +365,6 @@ body
       &:nth-child(4)
         display: none
 
-
-
-
-
-
 @keyframes firstSpin
   0%
     transform: rotate(0deg)
@@ -445,7 +405,6 @@ body
     box-shadow: 0 0 30px $red
   50%
     box-shadow: 0 0 80px $red
-
 
 @keyframes opacity
   0%
@@ -494,7 +453,6 @@ body
       opacity: 1
       transform: perspective(600px) translate3d(0px, 0px, 0px)
 
-
 @media screen and (max-width: 600px) and (orientation: portrait)
   @keyframes fadeInPlane
     0%
@@ -524,5 +482,3 @@ body
     transform: translate(0, 0)
   50%
     transform: translate(7px, -3px)
-
-

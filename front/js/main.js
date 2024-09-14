@@ -36,8 +36,6 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 // // так як сучасні браузери лочать автовідтворення музики на сайтах, вішаєм слухачі подій які запустять її
     document.addEventListener('click',   () => backgroundMusic.play(), { once: true });
-    // backgroundMusic.play()
-
     popupBtn.addEventListener("click", () => {
         if (popup.classList.contains("_first")) {
             popup.classList.remove("_opacity", "_zIndex");
@@ -86,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             }
         })();
 
-        // // звук кручення колеса варіант без промісів
+        // // таймінги звуків, варіант без промісів
         // setTimeout(() =>{
         //     reelSound.play();
         //     setTimeout(() =>{
@@ -197,56 +195,15 @@ document.addEventListener("DOMContentLoaded", () =>{
                         link.pathname = '/' + affid + '/' + cpaid;
                     }
                 }
-
                 params.forEach(function (param) {
                     if (url.searchParams.has(param)) {
                         link.searchParams.set(param, localStorage.getItem(param));
                     }
                 });
-
                 document.location.href = link;
             }
         });
     })();
-
-
-/// for test
-
-    const popup1 = document.querySelector(".popup1")
-    const popup2 = document.querySelector(".popup2")
-    const close = document.querySelector(".closePopup")
-
-    popup1.addEventListener("click", () =>{
-        popup.classList.add("_opacity" , "_zIndex", "_first")
-        document.querySelector(".first-win").style.animationPlayState = "initial"
-        if (popup.classList.contains("_second")){
-            popup.classList.remove("_second")
-            popup.classList.add("_first")
-            return
-        }
-
-        // else{
-        //     popup.classList.add("_first")
-        // }
-
-    })
-
-    popup2.addEventListener("click", () =>{
-        popup.classList.add("_opacity" , "_zIndex", "_second");
-        document.querySelector(".first-win").style.animationPlayState = "initial"
-        if (popup.classList.contains("_first")){
-            popup.classList.add("_second")
-            popup.classList.remove("_first")
-        }
-
-    })
-
-    close.addEventListener("click", () =>{
-        if(popup.classList.contains("_opacity") && popup.classList.contains("_zIndex")){
-            popup.classList.remove("_opacity" , "_zIndex", "_second")
-        }
-    })
-
 })
 
 
