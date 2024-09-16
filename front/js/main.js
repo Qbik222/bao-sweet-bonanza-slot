@@ -60,15 +60,15 @@ document.addEventListener("DOMContentLoaded", () =>{
                 // Відтворення звуку кручення колеса
                 await reelSound.play();
 
-                // Затримка (3400 мс) перед паузою
-                await delaySound(3400);
+                // Затримка (3500 мс) перед паузою
+                await delaySound(3500);
 
                 // Зупинка звуку кручення колеса
                 reelSound.pause();
                 reelSound.currentTime = 0;
 
-                // Затримка перед звуком зупинки колеса (1400 мс)
-                await delaySound(1400);
+                // Затримка перед звуком зупинки колеса (2600 мс)
+                await delaySound(2600);
 
                 // Відтворення звуку зупинки колеса
                 await reelStopSound.play();

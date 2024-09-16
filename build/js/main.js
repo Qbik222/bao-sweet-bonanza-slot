@@ -70,15 +70,15 @@ document.addEventListener("DOMContentLoaded", function () {
               return reelSound.play();
             case 5:
               _context.next = 7;
-              return delaySound(3400);
+              return delaySound(3500);
             case 7:
               // Зупинка звуку кручення колеса
               reelSound.pause();
               reelSound.currentTime = 0;
 
-              // Затримка перед звуком зупинки колеса (1400 мс)
+              // Затримка перед звуком зупинки колеса (1700 мс)
               _context.next = 11;
-              return delaySound(1400);
+              return delaySound(2600);
             case 11:
               _context.next = 13;
               return reelStopSound.play();
