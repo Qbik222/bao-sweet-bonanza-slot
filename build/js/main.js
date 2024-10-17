@@ -6,217 +6,425 @@ var _howler = require("howler");
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
-document.addEventListener("DOMContentLoaded", function () {
-  window.addEventListener('orientationchange', function () {
-    return window.location.reload();
-  });
-  var wheelBtn = document.querySelector(".land__wheel-btn");
-  var wheelSector = document.querySelector(".land__wheel-sector");
-  var popup = document.querySelector(".popup");
-  var popupBtn = document.querySelector(".popup__btn");
-
-  // Ініціалізація звуків
-  var backgroundMusic = new _howler.Howl({
-    src: ['music.mp3'],
-    volume: 1.0,
-    loop: true
-  });
-  var reelSound = new _howler.Howl({
-    src: ['reels.mp3'],
-    volume: 1.0,
-    loop: true
-  });
-  var reelStopSound = new _howler.Howl({
-    src: ['reel-stop.mp3'],
-    volume: 1.0,
-    loop: false
-  });
-  var popupSound = new _howler.Howl({
-    src: ['popup.mp3'],
-    volume: 1.0,
-    loop: false
-  });
-
-  // // так як сучасні браузери лочать автовідтворення музики на сайтах, вішаєм слухачі подій які запустять її
-  document.addEventListener('click', function () {
-    return backgroundMusic.play();
-  }, {
-    once: true
-  });
-  popupBtn.addEventListener("click", function () {
-    if (popup.classList.contains("_first")) {
-      popup.classList.remove("_opacity", "_zIndex");
-      wheelBtn.style.pointerEvents = "initial";
-    }
-  });
-  var spinCounter = 0;
-  function spinWheel(wheel, anim, position, popup, btn) {
-    wheel.classList.add(anim);
-    function delaySound(ms) {
-      return new Promise(function (resolve) {
-        return setTimeout(resolve, ms);
-      });
-    }
-    (function () {
-      var _playSounds = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        return _regeneratorRuntime().wrap(function _callee$(_context) {
-          while (1) switch (_context.prev = _context.next) {
-            case 0:
-              _context.prev = 0;
-              _context.next = 3;
-              return delaySound(1000);
-            case 3:
-              _context.next = 5;
-              return reelSound.play();
-            case 5:
-              _context.next = 7;
-              return delaySound(3500);
-            case 7:
-              // Зупинка звуку кручення колеса
-              reelSound.pause();
-              reelSound.currentTime = 0;
-
-              // Затримка перед звуком зупинки колеса (1700 мс)
-              _context.next = 11;
-              return delaySound(2600);
-            case 11:
-              _context.next = 13;
-              return reelStopSound.play();
-            case 13:
-              _context.next = 15;
-              return delaySound(800);
-            case 15:
-              _context.next = 17;
-              return popupSound.play();
-            case 17:
-              _context.next = 22;
-              break;
-            case 19:
-              _context.prev = 19;
-              _context.t0 = _context["catch"](0);
-              console.error("Помилка при відтворенні звуків: ", _context.t0);
-            case 22:
-            case "end":
-              return _context.stop();
-          }
-        }, _callee, null, [[0, 19]]);
-      }));
-      function playSounds() {
-        return _playSounds.apply(this, arguments);
-      }
-      return playSounds;
-    })()();
-
-    // // таймінги звуків, варіант без промісів
-    // setTimeout(() =>{
-    //     reelSound.play();
-    //     setTimeout(() =>{
-    //         reelSound.pause();
-    //         reelSound.currentTime = 0;
-    //         setTimeout(() =>{
-    //             reelStopSound.play();
-    //             setTimeout(() =>{
-    //                 popupSound.play();
-    //             }, 800)
-    //         }, 1400)
-    //     },3400);
-    // },1000)
-
-    wheel.addEventListener("animationend", function () {
-      wheel.classList.remove(anim);
-      wheel.style.transform = "rotate(".concat(position, "deg)");
-      popup.classList.add("_opacity", "_zIndex");
-      btn.classList.add("_btnPulse");
-      document.querySelector(".first-win").style.animationPlayState = "initial";
-    }, {
-      once: true
-    });
-  }
-  wheelBtn.addEventListener("click", function () {
-    wheelBtn.style.pointerEvents = "none";
-    if (spinCounter === 0) {
-      wheelBtn.classList.remove("_btnPulse");
-      spinWheel(wheelSector, "firstSpin", 1620, popup, wheelBtn);
-      popup.classList.add("_first");
-      spinCounter++;
-      return;
-    }
-    if (spinCounter === 1) {
-      wheelBtn.classList.remove("_btnPulse");
-      spinWheel(wheelSector, "secondSpin", 2744.5, popup, wheelBtn);
-      popup.classList.add("_second");
-      popup.classList.remove("_first");
-      setTimeout(function () {
-        document.querySelector(".all-link").classList.remove("_hidden");
-      }, 8500);
-      spinCounter++;
-      return;
-    }
-  });
-
-  // parallax
-  var moveSpeed = 260;
-  if (window.innerWidth > 950) {
-    document.addEventListener("mousemove", parallax);
-  }
-  function parallax(e) {
-    document.querySelectorAll(".parallax").forEach(function (item) {
-      var moving_value = item.getAttribute("data-value");
-      var y = e.clientX * moving_value / moveSpeed;
-      var x = e.clientY * moving_value / moveSpeed;
-      var z = e.clientY * moving_value / moveSpeed * 2;
-      item.style.transform = "perspective(300px) translate3d(".concat(x, "px, ").concat(y, "px, ").concat(z, "px)");
-    });
-  }
-
-  // TDS script
-
-  (function () {
-    var url = new URL(window.location.href);
-    var params = ['l', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'param1', 'param2', 'param3', 'param4', 'creative_type', 'creative_id'];
-    var linkParams = ['affid', 'cpaid']; // ищем в url redirectUrl в url:
-
-    if (url.searchParams.has('redirectUrl')) {
-      var redirectUrl = new URL(url.searchParams.get('redirectUrl'));
-      if (redirectUrl.href.match(/\//g).length === 4 && redirectUrl.searchParams.get('l')) {
-        //если ссылка в ссылка redirectUrl корректная
-        localStorage.setItem('redirectUrl', redirectUrl.href); // указываем точкой входа домен с протоколом из redirectUrl
-      }
-    }
-    params.forEach(function (param) {
-      if (url.searchParams.has(param)) localStorage.setItem(param, url.searchParams.get(param));
-    });
-    linkParams.forEach(function (linkParam) {
-      if (url.searchParams.has(linkParam)) localStorage.setItem(linkParam, url.searchParams.get(linkParam));
-    });
-    window.addEventListener('click', function (e) {
-      var link,
-        parent = e.target.closest('a');
-      if (parent.getAttribute('href') !== 'https://tds.favbet.partners') {
-        return;
-      }
-      if (parent) {
-        e.preventDefault();
-        var affid = localStorage.getItem('affid');
-        var cpaid = localStorage.getItem('cpaid');
-        if (localStorage.getItem("redirectUrl")) {
-          link = new URL(localStorage.getItem("redirectUrl"));
-        } else {
-          link = new URL(parent.href);
-          if (affid && cpaid) {
-            link.pathname = '/' + affid + '/' + cpaid;
-          }
-        }
-        params.forEach(function (param) {
-          if (url.searchParams.has(param)) {
-            link.searchParams.set(param, localStorage.getItem(param));
-          }
-        });
-        document.location.href = link;
-      }
-    });
-  })();
+// sound init
+var backgroundMusic = new _howler.Howl({
+  src: ['main-music.mp3'],
+  volume: 1.0,
+  loop: true
 });
+var reelSound = new _howler.Howl({
+  src: ['reels.mp3'],
+  volume: 1.0,
+  loop: true
+});
+var winSlots = new _howler.Howl({
+  src: ['win-slots.mp3'],
+  volume: 1.0,
+  loop: false
+});
+var popupSound = new _howler.Howl({
+  src: ['popup.mp3'],
+  volume: 1.0,
+  loop: false
+});
+var slotSound = new _howler.Howl({
+  src: ['line.mp3'],
+  volume: 1.0,
+  loop: false
+});
+document.addEventListener('click', function () {
+  return backgroundMusic.play();
+}, {
+  once: true
+});
+window.addEventListener('orientationchange', function () {
+  window.location.reload();
+});
+var playBtn = document.querySelector('.play-btn'),
+  main = document.querySelector('.bonus__main'),
+  overlay = document.querySelector('.bonus__overlay'),
+  popupFirst = document.querySelector('.bonus__firstWin'),
+  popupFirstBtn = document.querySelector('.bonus__firstWin-btn'),
+  popupSecond = document.querySelector('.bonus__secondWin'),
+  overflow = document.querySelector('body'),
+  wrapper = document.querySelector('.bonus'),
+  bubbleText = document.querySelector('.bonus__main-bubble'),
+  winOuter = document.querySelector('.outer-col-win'),
+  slotsWindow = document.querySelector(".window");
+
+//slots
+var icons = ['win111.png', 'win3.png', 'win4.png', 'win5.png', 'win6.png', 'win7.png', 'win8.png'];
+var slots = document.querySelector('.slots');
+var cols = document.querySelectorAll('.col');
+for (var i in cols) {
+  if (!cols.hasOwnProperty(i)) continue;
+  var col = cols[i];
+  var str = '';
+  var firstThree = '';
+  for (var x = 0; x < 30; x++) {
+    var part = '<div class="icon-wrap"><img class="icon" src="img/slots/' + icons[Math.floor(Math.random() * icons.length)] + '"></div>';
+    // var part = '<img class="icon" src="img/slots/'+icons[Math.floor(Math.random()*icons.length)]+'">';
+    str += part;
+    if (x < 3) firstThree += part;
+  }
+  col.innerHTML = str + firstThree;
+}
+(function startSlotsImg() {
+  var startCol1 = ['win5.png', 'win6.png', 'win3.png', 'win5.png', 'win3.png'];
+  var startCol2 = ['win6.png', 'win6.png', 'win8.png', 'win111.png', 'win6.png'];
+  var startCol3 = ['win4.png', 'win8.png', 'win4.png', 'win7.png', 'win8.png'];
+  var startCol4 = ['win5.png', 'win8.png', 'win6.png', 'win7.png', 'win8.png'];
+  var startCol5 = ['win5.png', 'win6.png', 'win3.png', 'win5.png', 'win6.png'];
+  var colsImg1 = Array.from(cols[0].querySelectorAll('img'));
+  colsImg1[32].setAttribute('src', 'img/slots/' + startCol1[0]);
+  colsImg1[31].setAttribute('src', 'img/slots/' + startCol1[1]);
+  colsImg1[30].setAttribute('src', 'img/slots/' + startCol1[2]);
+  colsImg1[29].setAttribute('src', 'img/slots/' + startCol1[3]);
+  colsImg1[28].setAttribute('src', 'img/slots/' + startCol1[4]);
+  var colsImg2 = Array.from(cols[1].querySelectorAll('img'));
+  colsImg2[32].setAttribute('src', 'img/slots/' + startCol2[0]);
+  colsImg2[31].setAttribute('src', 'img/slots/' + startCol2[1]);
+  colsImg2[30].setAttribute('src', 'img/slots/' + startCol2[2]);
+  colsImg2[29].setAttribute('src', 'img/slots/' + startCol2[3]);
+  colsImg2[28].setAttribute('src', 'img/slots/' + startCol2[4]);
+  var colsImg3 = Array.from(cols[2].querySelectorAll('img'));
+  colsImg3[32].setAttribute('src', 'img/slots/' + startCol3[0]);
+  colsImg3[31].setAttribute('src', 'img/slots/' + startCol3[1]);
+  colsImg3[30].setAttribute('src', 'img/slots/' + startCol3[2]);
+  colsImg3[29].setAttribute('src', 'img/slots/' + startCol3[3]);
+  colsImg3[28].setAttribute('src', 'img/slots/' + startCol3[4]);
+  var colsImg4 = Array.from(cols[3].querySelectorAll('img'));
+  colsImg4[32].setAttribute('src', 'img/slots/' + startCol4[0]);
+  colsImg4[31].setAttribute('src', 'img/slots/' + startCol4[1]);
+  colsImg4[30].setAttribute('src', 'img/slots/' + startCol4[2]);
+  colsImg4[29].setAttribute('src', 'img/slots/' + startCol4[3]);
+  colsImg4[28].setAttribute('src', 'img/slots/' + startCol4[4]);
+  var colsImg5 = Array.from(cols[4].querySelectorAll('img'));
+  colsImg5[32].setAttribute('src', 'img/slots/' + startCol5[0]);
+  colsImg5[31].setAttribute('src', 'img/slots/' + startCol5[1]);
+  colsImg5[30].setAttribute('src', 'img/slots/' + startCol5[2]);
+  colsImg5[29].setAttribute('src', 'img/slots/' + startCol5[3]);
+  colsImg5[28].setAttribute('src', 'img/slots/' + startCol5[4]);
+})();
+var win1Col1 = ['win5.png', 'win6.png', 'win8.png', 'win5.png', 'win3.png'];
+var win1Col2 = ['win8.png', 'win6.png', 'win111.png', 'win6.png', 'win3.png'];
+var win1Col3 = ['win4.png', 'win8.png', 'win6.png', 'win3.png', 'win6.png'];
+var win1Col4 = ['win111.png', 'win4.png', 'win5.png', 'win6.png', 'win8.png'];
+var win1Col5 = ['win5.png', 'win6.png', 'win7.png', 'win6.png', 'win4.png'];
+var win2Col1 = ['win5.png', 'win6.png', 'win8.png', 'win7.png', 'win6.png'];
+var win2Col2 = ['win3.png', 'win6.png', 'win7.png', 'win5.png', 'win3.png'];
+var win2Col3 = ['win6.png', 'win7.png', 'win3.png', 'win7.png', 'win4.png'];
+var win2Col4 = ['win6.png', 'win6.png', 'win7.png', 'win6.png', 'win6.png'];
+var win2Col5 = ['win3.png', 'win6.png', 'win8.png', 'win7.png', 'win8.png'];
+var colsImg1 = Array.from(cols[0].querySelectorAll('img'));
+var colsImg2 = Array.from(cols[1].querySelectorAll('img'));
+var colsImg3 = Array.from(cols[2].querySelectorAll('img'));
+var colsImg4 = Array.from(cols[3].querySelectorAll('img'));
+var colsImg5 = Array.from(cols[4].querySelectorAll('img'));
+var colsImg1Two = Array.from(cols[0].querySelectorAll('img'));
+var colsImg2Two = Array.from(cols[1].querySelectorAll('img'));
+var colsImg3Two = Array.from(cols[2].querySelectorAll('img'));
+var colsImg4Two = Array.from(cols[3].querySelectorAll('img'));
+var colsImg5Two = Array.from(cols[4].querySelectorAll('img'));
+var tries = 0;
+function spin() {
+  //sounds
+  function delaySound(ms) {
+    return new Promise(function (resolve) {
+      return setTimeout(resolve, ms);
+    });
+  }
+  (function () {
+    var _playSounds = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            _context.prev = 0;
+            _context.next = 3;
+            return reelSound.play();
+          case 3:
+            _context.next = 5;
+            return delaySound(3000);
+          case 5:
+            // Зупинка звуку кручення колеса
+            reelSound.pause();
+            reelSound.currentTime = 0;
+            slotSound.play();
+            _context.next = 10;
+            return delaySound(700);
+          case 10:
+            winSlots.play();
+            _context.next = 13;
+            return delaySound(2700);
+          case 13:
+            popupSound.play();
+            _context.next = 19;
+            break;
+          case 16:
+            _context.prev = 16;
+            _context.t0 = _context["catch"](0);
+            console.error("Помилка при відтворенні звуків: ", _context.t0);
+          case 19:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee, null, [[0, 16]]);
+    }));
+    function playSounds() {
+      return _playSounds.apply(this, arguments);
+    }
+    return playSounds;
+  })()();
+  slots.classList.toggle('spinning', true);
+  //Фикс для Сафари, который решил глотать последние картинки при прокрутке
+  if (tries === 0) {
+    window.setTimeout(function () {
+      var cols = document.querySelectorAll('.col');
+      tries++;
+      colsImg1[32].setAttribute('src', 'img/slots/' + win1Col1[4]);
+      colsImg1[31].setAttribute('src', 'img/slots/' + win1Col1[3]);
+      colsImg1[30].setAttribute('src', 'img/slots/' + win1Col1[2]);
+      colsImg1[29].setAttribute('src', 'img/slots/' + win1Col1[1]);
+      colsImg1[28].setAttribute('src', 'img/slots/' + win1Col1[0]);
+      colsImg1[0].setAttribute('src', 'img/slots/' + win1Col1[0]);
+      colsImg1[1].setAttribute('src', 'img/slots/' + win1Col1[1]);
+      colsImg1[2].setAttribute('src', 'img/slots/' + win1Col1[2]);
+      colsImg1[3].setAttribute('src', 'img/slots/' + win1Col1[3]);
+      colsImg1[4].setAttribute('src', 'img/slots/' + win1Col1[4]);
+      colsImg2[32].setAttribute('src', 'img/slots/' + win1Col2[4]);
+      colsImg2[31].setAttribute('src', 'img/slots/' + win1Col2[3]);
+      colsImg2[30].setAttribute('src', 'img/slots/' + win1Col2[2]);
+      colsImg2[29].setAttribute('src', 'img/slots/' + win1Col2[1]);
+      colsImg2[28].setAttribute('src', 'img/slots/' + win1Col2[0]);
+      colsImg2[0].setAttribute('src', 'img/slots/' + win1Col2[0]);
+      colsImg2[1].setAttribute('src', 'img/slots/' + win1Col2[1]);
+      colsImg2[2].setAttribute('src', 'img/slots/' + win1Col2[2]);
+      colsImg2[3].setAttribute('src', 'img/slots/' + win1Col2[3]);
+      colsImg2[4].setAttribute('src', 'img/slots/' + win1Col2[4]);
+      colsImg3[32].setAttribute('src', 'img/slots/' + win1Col3[4]);
+      colsImg3[31].setAttribute('src', 'img/slots/' + win1Col3[3]);
+      colsImg3[30].setAttribute('src', 'img/slots/' + win1Col3[2]);
+      colsImg3[29].setAttribute('src', 'img/slots/' + win1Col3[1]);
+      colsImg3[28].setAttribute('src', 'img/slots/' + win1Col3[0]);
+      colsImg3[0].setAttribute('src', 'img/slots/' + win1Col3[0]);
+      colsImg3[1].setAttribute('src', 'img/slots/' + win1Col3[1]);
+      colsImg3[2].setAttribute('src', 'img/slots/' + win1Col3[2]);
+      colsImg3[3].setAttribute('src', 'img/slots/' + win1Col3[3]);
+      colsImg3[4].setAttribute('src', 'img/slots/' + win1Col3[4]);
+      colsImg4[32].setAttribute('src', 'img/slots/' + win1Col4[4]);
+      colsImg4[31].setAttribute('src', 'img/slots/' + win1Col4[3]);
+      colsImg4[30].setAttribute('src', 'img/slots/' + win1Col4[2]);
+      colsImg4[29].setAttribute('src', 'img/slots/' + win1Col4[1]);
+      colsImg4[28].setAttribute('src', 'img/slots/' + win1Col4[0]);
+      colsImg4[0].setAttribute('src', 'img/slots/' + win1Col4[0]);
+      colsImg4[1].setAttribute('src', 'img/slots/' + win1Col4[1]);
+      colsImg4[2].setAttribute('src', 'img/slots/' + win1Col4[2]);
+      colsImg4[3].setAttribute('src', 'img/slots/' + win1Col4[3]);
+      colsImg4[4].setAttribute('src', 'img/slots/' + win1Col4[4]);
+      colsImg5[32].setAttribute('src', 'img/slots/' + win1Col5[4]);
+      colsImg5[31].setAttribute('src', 'img/slots/' + win1Col5[3]);
+      colsImg5[30].setAttribute('src', 'img/slots/' + win1Col5[2]);
+      colsImg5[29].setAttribute('src', 'img/slots/' + win1Col5[1]);
+      colsImg5[28].setAttribute('src', 'img/slots/' + win1Col5[0]);
+      colsImg5[0].setAttribute('src', 'img/slots/' + win1Col5[0]);
+      colsImg5[1].setAttribute('src', 'img/slots/' + win1Col5[1]);
+      colsImg5[2].setAttribute('src', 'img/slots/' + win1Col5[2]);
+      colsImg5[3].setAttribute('src', 'img/slots/' + win1Col5[3]);
+      colsImg5[4].setAttribute('src', 'img/slots/' + win1Col5[4]);
+    }, 1500);
+  }
+  if (tries === 1) {
+    window.setTimeout(function () {
+      var cols = document.querySelectorAll('.col');
+      tries++;
+      colsImg1Two[32].setAttribute('src', 'img/slots/' + win2Col1[4]);
+      colsImg1Two[31].setAttribute('src', 'img/slots/' + win2Col1[3]);
+      colsImg1Two[30].setAttribute('src', 'img/slots/' + win2Col1[2]);
+      colsImg1Two[29].setAttribute('src', 'img/slots/' + win2Col1[1]);
+      colsImg1Two[28].setAttribute('src', 'img/slots/' + win2Col1[0]);
+      colsImg1Two[0].setAttribute('src', 'img/slots/' + win2Col1[0]);
+      colsImg1Two[1].setAttribute('src', 'img/slots/' + win2Col1[1]);
+      colsImg1Two[2].setAttribute('src', 'img/slots/' + win2Col1[2]);
+      colsImg1Two[3].setAttribute('src', 'img/slots/' + win2Col1[3]);
+      colsImg1Two[4].setAttribute('src', 'img/slots/' + win2Col1[4]);
+      colsImg2Two[32].setAttribute('src', 'img/slots/' + win2Col2[4]);
+      colsImg2Two[31].setAttribute('src', 'img/slots/' + win2Col2[3]);
+      colsImg2Two[30].setAttribute('src', 'img/slots/' + win2Col2[2]);
+      colsImg2Two[29].setAttribute('src', 'img/slots/' + win2Col2[1]);
+      colsImg2Two[28].setAttribute('src', 'img/slots/' + win2Col2[0]);
+      colsImg2Two[0].setAttribute('src', 'img/slots/' + win2Col2[0]);
+      colsImg2Two[1].setAttribute('src', 'img/slots/' + win2Col2[1]);
+      colsImg2Two[2].setAttribute('src', 'img/slots/' + win2Col2[2]);
+      colsImg2Two[3].setAttribute('src', 'img/slots/' + win2Col2[3]);
+      colsImg2Two[4].setAttribute('src', 'img/slots/' + win2Col2[4]);
+      colsImg3Two[32].setAttribute('src', 'img/slots/' + win2Col3[4]);
+      colsImg3Two[31].setAttribute('src', 'img/slots/' + win2Col3[3]);
+      colsImg3Two[30].setAttribute('src', 'img/slots/' + win2Col3[2]);
+      colsImg3Two[29].setAttribute('src', 'img/slots/' + win2Col3[1]);
+      colsImg3Two[28].setAttribute('src', 'img/slots/' + win2Col3[0]);
+      colsImg3Two[0].setAttribute('src', 'img/slots/' + win2Col3[0]);
+      colsImg3Two[1].setAttribute('src', 'img/slots/' + win2Col3[1]);
+      colsImg3Two[2].setAttribute('src', 'img/slots/' + win2Col3[2]);
+      colsImg3Two[3].setAttribute('src', 'img/slots/' + win2Col3[3]);
+      colsImg3Two[4].setAttribute('src', 'img/slots/' + win2Col3[4]);
+      colsImg4Two[32].setAttribute('src', 'img/slots/' + win2Col4[4]);
+      colsImg4Two[31].setAttribute('src', 'img/slots/' + win2Col4[3]);
+      colsImg4Two[30].setAttribute('src', 'img/slots/' + win2Col4[2]);
+      colsImg4Two[29].setAttribute('src', 'img/slots/' + win2Col4[1]);
+      colsImg4Two[28].setAttribute('src', 'img/slots/' + win2Col4[0]);
+      colsImg4Two[0].setAttribute('src', 'img/slots/' + win2Col4[0]);
+      colsImg4Two[1].setAttribute('src', 'img/slots/' + win2Col4[1]);
+      colsImg4Two[2].setAttribute('src', 'img/slots/' + win2Col4[2]);
+      colsImg4Two[3].setAttribute('src', 'img/slots/' + win2Col4[3]);
+      colsImg4Two[4].setAttribute('src', 'img/slots/' + win2Col4[4]);
+      colsImg5Two[32].setAttribute('src', 'img/slots/' + win2Col5[4]);
+      colsImg5Two[31].setAttribute('src', 'img/slots/' + win2Col5[3]);
+      colsImg5Two[30].setAttribute('src', 'img/slots/' + win2Col5[2]);
+      colsImg5Two[29].setAttribute('src', 'img/slots/' + win2Col5[1]);
+      colsImg5Two[28].setAttribute('src', 'img/slots/' + win2Col5[0]);
+      colsImg5Two[0].setAttribute('src', 'img/slots/' + win2Col5[0]);
+      colsImg5Two[1].setAttribute('src', 'img/slots/' + win2Col5[1]);
+      colsImg5Two[2].setAttribute('src', 'img/slots/' + win2Col5[2]);
+      colsImg5Two[3].setAttribute('src', 'img/slots/' + win2Col5[3]);
+      colsImg5Two[4].setAttribute('src', 'img/slots/' + win2Col5[4]);
+    }, 1500);
+  }
+  window.setTimeout(function () {
+    slots.classList.toggle('spinning', false);
+    if (tries === 1) {
+      slotsWindow.classList.add("afterSpin");
+      colsImg1[29].parentElement.classList.add('_winAnim');
+      colsImg2[29].parentElement.classList.add('_winAnim');
+      colsImg3[30].parentElement.classList.add('_winAnim');
+      colsImg4[31].parentElement.classList.add('_winAnim');
+      colsImg5[31].parentElement.classList.add('_winAnim');
+      winOuter.classList.add('_winOne');
+    }
+    if (tries === 2) {
+      slotsWindow.classList.add("afterSecondSpin");
+      colsImg1Two[31].parentElement.classList.add('_winAnim');
+      colsImg2Two[30].parentElement.classList.add('_winAnim');
+      colsImg3Two[29].parentElement.classList.add('_winAnim');
+      colsImg4Two[30].parentElement.classList.add('_winAnim');
+      colsImg5Two[31].parentElement.classList.add('_winAnim');
+      winOuter.classList.add('_winTwo');
+    }
+  }, 3500);
+}
+var triesCounter = 0;
+var babbleTextAfterRotation = 'Tienes una oportunidad, mortal';
+playBtn.addEventListener('click', function () {
+  if (triesCounter === 0) {
+    runFirstRotation();
+  } else {
+    runSecondRotation();
+  }
+});
+function runFirstRotation() {
+  playBtn.classList.remove('pulse-btn');
+  playBtn.style.cursor = 'default';
+  wrapper.style.pointerEvents = 'none';
+  spin();
+  setTimeout(function () {
+    doAfterFirstRotation();
+  }, 6000);
+  triesCounter++;
+}
+function doAfterFirstRotation() {
+  bubbleText.innerHTML = babbleTextAfterRotation;
+  displayPopup(popupFirst);
+  wrapper.style.pointerEvents = 'auto';
+  overflow.style.overflow = 'hidden';
+  setTimeout(function () {
+    playBtn.classList.add('pulse-btn');
+    playBtn.style.cursor = 'pointer';
+  }, 1200);
+}
+function runSecondRotation() {
+  playBtn.classList.remove('pulse-btn');
+  playBtn.style.cursor = 'default';
+  overflow.style.overflow = 'hidden';
+  wrapper.style.pointerEvents = 'none';
+  spin();
+  setTimeout(function () {
+    doAfterSecondRotation();
+  }, 6000);
+  triesCounter++;
+}
+function doAfterSecondRotation() {
+  displayPopup(popupSecond);
+  wrapper.style.pointerEvents = 'auto';
+}
+popupFirstBtn.addEventListener('click', function () {
+  overlay.classList.add('opacity-overlay');
+  popupFirst.classList.add('hide');
+  overflow.style.overflow = 'unset';
+  slotsWindow.classList.remove("afterSpin");
+  winOuter.classList.remove('_winOne');
+  colsImg1[29].parentElement.classList.remove('_winAnim');
+  colsImg2[29].parentElement.classList.remove('_winAnim');
+  colsImg3[30].parentElement.classList.remove('_winAnim');
+  colsImg4[31].parentElement.classList.remove('_winAnim');
+  colsImg5[31].parentElement.classList.remove('_winAnim');
+});
+function displayPopup(popup) {
+  overlay.classList.remove('opacity-overlay');
+  popup.classList.remove('hide');
+}
+cols.forEach(function (item) {
+  if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    // код для мобильных устройств
+    item.classList.add('_ios');
+  } else {
+    // код для обычных устройств
+    item.classList.remove('_ios');
+  }
+});
+(function () {
+  var url = new URL(window.location.href);
+  var params = ['l', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'param1', 'param2', 'param3', 'param4', 'creative_type', 'creative_id'];
+  var linkParams = ['affid', 'cpaid']; // ищем в url redirectUrl в url:
+
+  if (url.searchParams.has('redirectUrl')) {
+    var redirectUrl = new URL(url.searchParams.get('redirectUrl'));
+    if (redirectUrl.href.match(/\//g).length === 4 && redirectUrl.searchParams.get('l')) {
+      //если ссылка в ссылка redirectUrl корректная
+      localStorage.setItem('redirectUrl', redirectUrl.href); // указываем точкой входа домен с протоколом из redirectUrl
+    }
+  }
+  params.forEach(function (param) {
+    if (url.searchParams.has(param)) localStorage.setItem(param, url.searchParams.get(param));
+  });
+  linkParams.forEach(function (linkParam) {
+    if (url.searchParams.has(linkParam)) localStorage.setItem(linkParam, url.searchParams.get(linkParam));
+  });
+  window.addEventListener('click', function (e) {
+    var link,
+      parent = e.target.closest('a');
+    if (parent.getAttribute('href') !== 'https://tds.favbet.partners') {
+      return;
+    }
+    if (parent) {
+      e.preventDefault();
+      var affid = localStorage.getItem('affid');
+      var cpaid = localStorage.getItem('cpaid');
+      if (localStorage.getItem("redirectUrl")) {
+        link = new URL(localStorage.getItem("redirectUrl"));
+      } else {
+        link = new URL(parent.href);
+        if (affid && cpaid) {
+          link.pathname = '/' + affid + '/' + cpaid;
+        }
+      }
+      params.forEach(function (param) {
+        if (url.searchParams.has(param)) {
+          link.searchParams.set(param, localStorage.getItem(param));
+        }
+      });
+      document.location.href = link;
+    }
+  });
+})();
 
 },{"howler":2}],2:[function(require,module,exports){
 (function (global){(function (){

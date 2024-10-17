@@ -1,46 +1,70 @@
-a(href="https://tds.favbet.partners").all-link._hidden
-.land
-    .land__decor
-    .land__logo
-        picture
-            source(srcset="./img/logo-mob.png" media="(max-width: 1050px)")
-            img(src="./img/logo.png" alt="lopebet")
-    .land__text
-        .land__text-title Spin to get the bonus
-        .land__text-item from Samir
-    .land__wheel
-        .land__plane
-        .land__wheel-border
-        .land__wheel-sector
-        .land__wheel-btn._btnPulse.snd.sound-control #[span.sound-icon.snd-on]spin
-    .land__pers
-        picture
-            source(srcset="./img/pers-mob.png" media="(max-width: 600px)")
-            source(srcset="./img/pers-tab.png" media="(max-width: 1050px)")
-            img(src="./img/pers-desc.png" alt="Samir")
-    .land__footer
-    .popup
-        .popup__logo
-            picture
-                source(srcset="./img/logo-mob.png" media="(max-width: 1050px)")
-                img(src="./img/logo.png" alt="lopebet")
-        .popup__pers
-            picture
-                source(srcset="./img/pers-tab.png" media="(max-width: 1050px)")
-                img(src="./img/pers-desc.png" alt="Samir")
-        .popup__container
-            .popup__title LUCK IS ON YOUR SIDE
-            .popup__first-text +700%
-            .popup__second-text 700% + 500 fs
-            .popup__icon
-                img(src="./img/popup/popup-spin-icon.png" alt="lopebet").first-win
-                img(src="./img/popup/popup-icon-plane.png" alt="lopebet").second-win
-            .popup__btn
-                span.first-win spin more
-                a(href="https://tds.favbet.partners").second-win get the bonus
-            .popup__money-item.parallax(data-value="4")
-        .popup__money
-            .popup__money-item.parallax(data-value="-5")
-            .popup__money-item.parallax(data-value="2")
-            .popup__money-item.parallax(data-value="-6")
-            .popup__money-item.parallax(data-value="-6")
+.bonus
+  .bonus__overlay.opacity-overlay
+    .bonus__firstWin.hide
+      .bonus__firstWin-image
+        .bonus__firstWin-bubble Enhorabuena!
+        picture.land__firstWin-main
+          source(media="(max-width: 600px) and (orientation: portrait)" srcset="img/zevs-popup1-mob.png")
+          source(media="(max-width: 920px) and (orientation: landscape) and (max-height: 450px)" srcset="img/zevs-popup1-mob.png")
+          source(media="(min-width: 601px) and (max-width: 1300px) and (orientation: portrait)" srcset="img/zevs-popup1-desc.png")
+          source(media="(min-width: 601px) and (orientation: landscape)" srcset="img/zevs-popup1-desc.png")
+          img(src="img/zevs-popup1-desc.png" alt="Favbet")
+      .bonus__firstWin-info
+        .bonus__firstWin-win Bonificación
+        .bonus__firstWin-win2 de bienvenida del 100%
+        .bonus__firstWin-title
+          .bonus__firstWin-title-top HASTA 1100 PEN
+        .bonus__firstWin-text Resta mais uma tentativa
+        .bonus__firstWin-btn #[span Tente novamente]
+    .bonus__secondWin.hide
+      .bonus__secondWin-image
+        .bonus__secondWin-bubble #[span Enhorabuena!] #[br] eres una leyenda del mundo antiguo!
+        picture.land__firstWin-main
+          source(media="(max-width: 600px) and (orientation: portrait)" srcset="img/zevs-popup2-mob.png")
+          source(media="(max-width: 920px) and (orientation: landscape) and (max-height: 450px)" srcset="img/zevs-popup2-mob.png")
+          source(media="(min-width: 601px) and (max-width: 1300px) and (orientation: portrait)" srcset="img/zevs-popup2-desc.png")
+          source(media="(min-width: 601px) and (orientation: landscape)" srcset="img/zevs-popup2-desc.png")
+          img(src="img/zevs-popup2-desc.png" alt="Favbet")
+      .bonus__secondWin-info
+        .bonus__secondWin-win Bonificación
+        .bonus__secondWin-win2 de bienvenida del 100%
+        .bonus__secondWin-title
+          .bonus__secondWin-title-top HASTA 1100 PEN
+        .bonus__secondWin-plus +
+        .bonus__secondWin-title2
+          .bonus__secondWin-title2-top 150 giros gratis
+        a(href='https://tds.favbet.partners' target="_blank").bonus__secondWin-more Vuelve a intentarlo
+        a(href='https://tds.favbet.partners' target="_blank").bonus__secondWin-btn #[span Consigue la bonificación]
+  .bonus__main
+    .bonus__main-logo
+    .bonus__main-txt
+      .bonus__main-txt-top Elige una
+      .bonus__main-txt-bottom bonificación
+      .bonus__main-txt-top2 y empieza a jugar
+    .bonus__main-image
+      .bonus__main-bubble Tienes dos oportunidades, mortal
+      picture.land__image-main
+        source(media="(max-width: 600px) and (orientation: portrait)" srcset="img/zevs-mob.png")
+        source(media="(max-width: 920px) and (orientation: landscape) and (max-height: 450px)" srcset="img/zevs-mob.png")
+        source(media="(min-width: 601px) and (max-width: 1300px) and (orientation: portrait)" srcset="img/zevs-desc.png")
+        source(media="(min-width: 601px) and (orientation: landscape)" srcset="img/zevs-desc.png")
+        img(src="img/zevs-desc.png" alt="Favbet")
+    .bonus__main-wrapper
+      .play-btn.pulse-btn #[span GO]
+      .bonus__main-slots
+        .slots
+          .window
+            .outer-col.outer-col-win
+              .col
+            .outer-col
+              .col
+            .outer-col
+              .col
+            .outer-col
+              .col
+            .outer-col
+              .col
+  .bonus__lighting-one
+  .bonus__lighting-two
+  .bonus__pilars-one
+  .bonus__pilars-two
