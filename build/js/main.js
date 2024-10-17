@@ -361,7 +361,8 @@ function runSecondRotation() {
 }
 function doAfterSecondRotation() {
   displayPopup(popupSecond);
-  wrapper.style.pointerEvents = 'auto';
+  wrapper.style.pointerEvents = 'none';
+  document.querySelector(".all-link").classList.remove("hide");
   setTimeout(function () {
     secondWinStar.forEach(function (star, i) {
       setTimeout(function () {

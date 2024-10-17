@@ -18,6 +18,15 @@ body
     max-width: 100%
     height: auto
 
+.all-link
+  position: fixed
+  z-index: 0
+  width: 100%
+  height: 100%
+  left: 0
+  top: 0
+  cursor: default
+
 .position
   position: absolute
   top: 0
@@ -31,6 +40,7 @@ body
   height: 100%
   overflow: hidden
   position: relative
+  z-index: 10
   @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 451px)
     background: #005 url('../img/bg-desc.jpg') no-repeat 50% 0/cover
   @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
@@ -144,6 +154,7 @@ body
       height: 95px
       position: relative
       background: url("../img/btn-popup.png") no-repeat 0 0/contain
+      pointer-events: initial
       //position: absolute
       //left: 50%
       //transform: translateX(-50%)
@@ -705,7 +716,7 @@ body
 .hide
   display: none
 
-//.opacity-overlay
-//  opacity: 0
-//  visibility: hidden
+.opacity-overlay
+  opacity: 0
+  visibility: hidden
 
