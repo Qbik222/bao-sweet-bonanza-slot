@@ -5,9 +5,10 @@ $green-hover: #09B47F
 $grey: #EDEDED
 $white: #FFFFFF
 $text: #292929
+$yellow: #EAB429
 
-$font-suisse-reg: SuisseIntl-Regular, sans-serif //400
-$font-caesar: CaesarDressingCyrillic, sans-serif
+$font-inter-semib: Inter-SemiBold, sans-serif //400
+$font-perpetua-bold: Perpetua-Bold, sans-serif //700
 
 body
   -webkit-tap-highlight-color: rgba(0,0,0,0)
@@ -38,6 +39,30 @@ body
     background: #000055 url("../img/bg-mob.jpg") no-repeat 50% 0%/cover
   @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
     background: #005 url("../img/bg-landscape.jpg") no-repeat 50% 0/cover
+  &__star1, &__star2, &__star3
+    position: absolute
+    transition: all .7s ease-in-out
+    transform: scale(.7) rotate(15deg)
+
+  &__star1
+    background: url("../img/star1.png") no-repeat 0 0/contain
+    width: 315px
+    height: 315px
+    bottom: -220px
+    left: -189px
+    //transform: translate(-60%, 70%)
+  &__star2
+    background: url("../img/star2.png") no-repeat 0 0/contain
+    width: 175px
+    height: 187px
+    left: -300px
+    top: 50px
+  &__star3
+    background: url("../img/star3.png") no-repeat 0 0/contain
+    width: 105px
+    height: 105px
+    top: -160px
+    left: -80px
   &__overlay
     background: rgba(12, 24, 37, 0.85)
     display: flex
@@ -54,128 +79,56 @@ body
   &__firstWin,
   &__secondWin
     &-info
-      margin-top: 200px
-      padding-top: 90px
-      width: 894px
+      width: 520px
+      padding: 45px 0
       min-width: 480px
-      height: 500px
+      height: auto
       @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 451px)
-        background: url('../img/popup-bg.png') no-repeat 50% 0/contain
+        background: url('../img/popup-bg.png') no-repeat 50% 0/cover
+        background-size: 100% 100%
       @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
-        background:  url('../img/popup-bg.png') no-repeat 50% 0/contain
+        background:  url('../img/popup-bg.png') no-repeat 50% 0/cover
+        background-size: 100% 100%
       @media screen and (max-width: 600px) and (orientation: portrait)
-        background: url("../img/popup-bg-mob.png") no-repeat 50% 0%/contain
+        background: url("../img/popup-bg-mob.png") no-repeat 50% 0%/cover
+        background-size: 100% 100%
       @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
-        background: url("../img/popup-bg-mob.png") no-repeat 50% 0/contain
+        background: url("../img/popup-bg-mob.png") no-repeat 50% 0/cover
+        background-size: 100% 100%
       transform: scale(1)
       position: relative
       display: flex
       flex-direction: column
       align-items: center
-      &::before
-        content: ''
-        position: absolute
-        left: 50%
-        top: -35px
-        transform: translateX(-50%)
-        width: 84px
-        height: 114px
-        background: url('../img/plush.png') no-repeat 50% 0/contain
+      justify-content: flex-start
     &-image
-      top: 25px
-      left: 52%
-      transform: translateX(-50%)
+      //animation: 3s infinite zevs ease
+      height: 130vh
       position: absolute
-      width: 590px
-    &-bubble
-      position: absolute
-      padding: 55px 16px 5px 5px
-      top: 20px
-      left: -20px
-      width: 195px
-      height: 173px
-      font-family: $font-caesar
-      font-size: 22px
-      line-height: 34px
-      color: #000055
-      letter-spacing: 0.03em
-      text-align: center
-      background: url('../img/bubble-popup.png') no-repeat 50% 0/contain
-    &-title,&-title2
+      width: 90vh
+      top: -95px
+      right: -50px
+      z-index: 0
+      picture
+        height: 100%
+        position: absolute
+        top: 0
+    &-title
       display: flex
       flex-direction: column
       align-items: center
       position: relative
-      &-top
-        font-family: $font-caesar
-        white-space: nowrap
-        font-size: 78px
-        line-height: 78px
-        letter-spacing: 0.03em
-        background: linear-gradient(180deg, #4E1802 35%, #4E1C00 58.49%, #EF631A 71.67%)
-        -webkit-background-clip: text
-        -webkit-text-fill-color: transparent
-        background-clip: text
-        text-fill-color: transparent
-        position: relative
-        z-index: 3
-        top: 10px
-        padding: 1px
-        &::before
-          position: absolute
-          z-index: 1
-          left: 0
-          top: -5px
-          font-family: $font-caesar
-          font-size: 78px
-          line-height: 78px
-          letter-spacing: 0.03em
-          background: linear-gradient(180deg, #FFF325 35%, #F89E0A 58.49%, #FFF325 71.67%)
-          -webkit-background-clip: text
-          -webkit-text-fill-color: transparent
-          background-clip: text
-          text-fill-color: transparent
-          -webkit-text-stroke: 1px rgba(255, 255, 255, 1)
-          padding: 1px
-    &-win,&-win2
+      font-family: $font-perpetua-bold
+      font-size: 42px
+      line-height: 42px
+      color: $yellow
       text-align: center
-      font-family: $font-caesar
-      white-space: nowrap
-      font-size: 36px
-      line-height: 40px
-      letter-spacing: 0.03em
-      background: linear-gradient(180deg, #4E1802 35%, #4E1C00 58.49%, #EF631A 71.67%)
-      -webkit-background-clip: text
-      -webkit-text-fill-color: transparent
-      background-clip: text
-      text-fill-color: transparent
-      position: relative
-      z-index: 3
-      top: 10px
-      padding: 1px
-      &::before
-        text-align: center
-        position: absolute
-        z-index: 1
-        left: 50%
-        transform: translateX(-50%)
-        top: -5px
-        font-family: $font-caesar
-        font-size: 36px
-        line-height: 40px
-        letter-spacing: 0.03em
-        background: linear-gradient(180deg, #FFF325 35%, #F89E0A 58.49%, #FFF325 71.67%)
-        -webkit-background-clip: text
-        -webkit-text-fill-color: transparent
-        background-clip: text
-        text-fill-color: transparent
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 1)
-        padding: 1px
+      margin-top: 50px
     &-win
-      &::before
-        content: 'Bonificación'
+      max-width: 256px
+      margin: 10px 0 40px 0
     &-text
-      font-family: $font-suisse-reg
+      font-family: $font-inter-semib
       font-size: 16px
       line-height: 22px
       letter-spacing: 0.03em
@@ -188,347 +141,141 @@ body
       white-space: nowrap
       cursor: pointer
       width: 304px
-      height: 120px
-      background: url("../img/btn-normal.png") no-repeat 0 0/contain
-      position: absolute
-      left: 50%
-      transform: translateX(-50%)
-      bottom: -1px
-      transition: background .3s ease
+      height: 95px
+      position: relative
+      background: url("../img/btn-popup.png") no-repeat 0 0/contain
+      //position: absolute
+      //left: 50%
+      //transform: translateX(-50%)
+      //bottom: -1px
+      //transition: background .3s ease
       &:hover
-        background: url("../img/btn-hover.png") no-repeat 0 0/contain
+        cursor: pointer
+      &::before
+        text-align: center
+        content: attr(data-before)
+        position: absolute
+        z-index: 1
+        left: 50%
+        transform: translate(-50%, -43%)
+        top: 50%
+        font-family: $font-inter-semib
+        font-size: 30px
+        line-height: 34px
+        letter-spacing: 0.03em
+        color: transparent
+        //background: linear-gradient(180deg, #FFF325 35%, #F89E0A 58.49%, #FFF325 71.67%)
+        //-webkit-background-clip: text
+        //-webkit-text-fill-color: transparent
+        //background-clip: text
+        //text-fill-color: transparent
+        //-webkit-text-stroke: 1px rgba(255, 255, 255, 1)
+        padding: 1px
+        text-transform: uppercase
+        text-shadow: 0px 6.24px 6.24px rgba(0, 0, 0, 0.25), 0px -1.56px 0px #FFECA8
+
       span
         margin-top: -15px
-        font-family: $font-caesar
+        font-family: $font-inter-semib
         white-space: nowrap
         font-size: 30px
         line-height: 34px
         letter-spacing: 0.03em
-        background: linear-gradient(180deg, #4E1802 35%, #4E1C00 58.49%, #EF631A 71.67%)
+        background: linear-gradient(161deg, #FEDB6A 6.32%, #E3A31C 21.13%, #EFC232 34.24%, #975F1D 48.7%, #DBA228 65.65%, #FEDB6A 78.37%, #844E10 91.09%)
         -webkit-background-clip: text
         -webkit-text-fill-color: transparent
         background-clip: text
         text-fill-color: transparent
         position: relative
         z-index: 3
+        position: relative
+        text-transform: uppercase
         top: 10px
         padding: 1px
-        &::before
-          text-align: center
-          content: 'Tente novamente'
-          position: absolute
-          z-index: 1
-          left: 50%
-          transform: translateX(-50%)
-          top: -4px
-          font-family: $font-caesar
-          font-size: 30px
-          line-height: 34px
-          letter-spacing: 0.03em
-          background: linear-gradient(180deg, #FFF325 35%, #F89E0A 58.49%, #FFF325 71.67%)
-          -webkit-background-clip: text
-          -webkit-text-fill-color: transparent
-          background-clip: text
-          text-fill-color: transparent
-          -webkit-text-stroke: 1px rgba(255, 255, 255, 1)
-          padding: 1px
-  &__firstWin
-    &-title
-      margin: 0 0 40px 0
-      &-top
-        &::before
-          content: 'HASTA 1100 PEN'
-    &-win2
-      margin: 15px 0
-      &::before
-        content: 'de bienvenida del 100%'
-  &__secondWin
-    &-text
-      display: none
-    &-info
-      padding-top: 80px
-    &-image
-      width: 536px
-    &-bubble
-      padding: 35px 16px 5px 5px
-      font-size: 20px
-      line-height: 23px
-      width: 196px
-      height: 187px
-      left: -50px
-      span
-        font-size: 22px
-        line-height: 18px
-    &-title
-      &-top
-        &:before
-          content: "HASTA 1100 PEN"
-    &-title2
-      &-top
-        &:before
-          content: "150 giros gratis"
-    &-title,&-title2
-      &-top
-        font-size: 42px
-        line-height: 42px
-        &:before
-          font-size: inherit
-          line-height: inherit
-    &-plus
-      margin: 7px 0 -11px
-      text-align: center
-      font-family: $font-caesar
-      white-space: nowrap
-      font-size: 36px
-      line-height: 36px
-      letter-spacing: 0.03em
-      background: linear-gradient(180deg, #4E1802 35%, #4E1C00 58.49%, #EF631A 71.67%)
-      -webkit-background-clip: text
-      -webkit-text-fill-color: transparent
-      background-clip: text
-      text-fill-color: transparent
-      position: relative
-      z-index: 3
-      padding: 1px
-      &::before
-        text-align: center
-        content: '+'
-        position: absolute
-        z-index: 1
-        left: 50%
-        transform: translateX(-50%)
-        top: -4px
-        font-family: $font-caesar
-        font-size: 36px
-        line-height: 36px
-        letter-spacing: 0.03em
-        background: linear-gradient(180deg, #FFF325 35%, #F89E0A 58.49%, #FFF325 71.67%)
-        -webkit-background-clip: text
-        -webkit-text-fill-color: transparent
-        background-clip: text
-        text-fill-color: transparent
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 1)
-        padding: 1px
-    &-win
-      font-size: 28px
-      line-height: 32px
-      &:before
-        font-size: inherit
-        line-height: inherit
-        top: -4px
-    &-win2
-      margin: 5px 0 30px
-      font-size: 28px
-      line-height: 32px
-      &:before
-        font-size: inherit
-        line-height: inherit
-        content: 'de bienvenida del 100%'
-    &-text
-      margin: 0 0 5px 0
-    &-more
-      font-family: $font-suisse-reg
-      font-size: 14px
-      line-height: 21px
-      letter-spacing: .06em
-      text-decoration: underline
-      color: #FFFFFF
-      margin-top: 30px
-      &:hover
-        text-decoration: none
-    &-btn
-      span
-        font-size: 22px
-        line-height: 24px
-        &::before
-          content: 'Consigue la bonificación'
-          font-size: inherit
-          line-height: inherit
-  &__pilars
-    &-one
-      transform: translateX(20px)
-      position: absolute
-      width: 24vh
-      height: 85vh
-      bottom: 0
-      left: -130px
-      background:  url("../img/pillars1-desc.png") no-repeat 50% 0/contain
-    &-two
-      position: absolute
-      width: 78vh
-      height: 78vh
-      bottom: 0
-      right: -310px
-      @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 451px)
-        background:  url('../img/pillars2-desc.png') no-repeat 50% 0/contain
-      @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
-        background:   url('../img/pillars2-desc.png') no-repeat 50% 0/contain
-      @media screen and (max-width: 600px) and (orientation: portrait)
-        background:  url("../img/pillars2-mob.png") no-repeat 50% 0%/contain
-      @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
-        background:  url("../img/pillars2-mob.png") no-repeat 50% 0/contain
-  &__lighting
-    &-one
-      animation: 2s infinite bulbs-opacity ease
-      position: absolute
-      width: 64vh
-      height: 75vh
-      top: 10px
-      left: -10px
-      @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 451px)
-        background:  url('../img/lighting1-desc.png') no-repeat 50% 0/contain
-      @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
-        background:   url('../img/lighting1-desc.png') no-repeat 50% 0/contain
-      @media screen and (max-width: 600px) and (orientation: portrait)
-        background:  url("../img/lighting1-mob.png") no-repeat 50% 0%/contain
-      @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
-        background:  url("../img/lighting1-mob.png") no-repeat 50% 0/contain
-    &-two
-      animation: 3s infinite bulbs-opacity ease
-      opacity: 0
-      animation-delay: 1s
-      position: absolute
-      width: 73vh
-      height: 55vh
-      bottom: -74px
-      left: 38%
-      transform: translateX(-50%)
-      @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 451px)
-        background:  url('../img/lighting2-desc.png') no-repeat 50% 0/contain
-      @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
-        background:   url('../img/lighting2-desc.png') no-repeat 50% 0/contain
-      @media screen and (max-width: 600px) and (orientation: portrait)
-        background:  url("../img/lighting2-mob.png") no-repeat 50% 0%/contain
-      @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
-        background:  url("../img/lighting2-mob.png") no-repeat 50% 0/contain
+  &__popup-logo
+    background: url("../img/logo.png") no-repeat 0 0/contain
+    width: 225px
+    height: 65px
+    z-index: 1
   &__main
-    padding: 60px 4px 0 60px
+    padding: 60px 25px 0 60px
     height: 100%
     width: 100%
     position: relative
     display: flex
     align-items: center
     justify-content: space-between
-    &::before
-      pointer-events: none
-      content: ''
-      position: absolute
-      z-index: 4
-      width: 100%
-      height: 250px
-      bottom: -50px
-      left: 0
-      background: linear-gradient(180deg, rgba(8, 7, 68, 0.00) 0%, #080744 100%)
     &-logo
-      background: url("../img/logo.svg") no-repeat 0 0/contain
-      width: 402px
-      height: 154px
+      background: url("../img/logo.png") no-repeat 0 0/contain
+      width: 312px
+      height: 90px
+      position: absolute
+      top: 50px
+      left: 40px
+      z-index: 1
+    &-slot-logo
+      width: 393px
+      height: 162px
+      background: url("../img/slots/slots-logo.png") no-repeat 0 0/contain
       position: absolute
       top: 0
-      left: 0
-      z-index: 1
+      left: -20px
+      transform: translate(0, -80%)
+      z-index: 11
     &-txt
       margin-top: -90px
-      display: flex
-      flex-direction: column
-      align-items: flex-start
+      z-index: 5
       position: relative
-      left: 30px
-      z-index: 5
-      &-top,&-top2
-        font-family: $font-caesar
-        white-space: nowrap
-        font-size: 75px
-        line-height: 82px
-        letter-spacing: 0.03em
-        background: linear-gradient(180deg, #4E1802 35%, #4E1C00 58.49%, #EF631A 71.67%)
+      font-family: $font-perpetua-bold
+      font-size: 120px
+      line-height: 120px
+      &-content
+        background: linear-gradient(180deg, #975F1D -15.69%, #E3A31C -1.86%, #EFC232 23.88%, #FEDB6A 44.36%, #FEDB6A 64.34%, #DBA228 91.05%, #844E10 104.41%)
+        background-clip: text
         -webkit-background-clip: text
         -webkit-text-fill-color: transparent
-        background-clip: text
-        text-fill-color: transparent
+        //text-shadow: 0px 2px 2px rgba(18, 15, 10, 0.80)
+        -webkit-text-stroke-width: 1px
+        -webkit-text-stroke-color: #975F1D
+        font-family: inherit
+        font-size: inherit
+        line-height: inherit
+        text-transform: uppercase
+        z-index: 2
         position: relative
-        z-index: 3
-        top: 10px
-        padding: 1px
-        &::before
-          position: absolute
-          z-index: 1
-          left: 0
-          top: -5px
-          font-family: $font-caesar
-          font-size: 75px
-          line-height: 82px
-          letter-spacing: 0.03em
-          background: linear-gradient(180deg, #FFF325 35%, #F89E0A 58.49%, #FFF325 71.67%)
-          -webkit-background-clip: text
-          -webkit-text-fill-color: transparent
-          background-clip: text
-          text-fill-color: transparent
-          -webkit-text-stroke: 1px rgba(255, 255, 255, 1)
-          padding: 1px
-      &-top
-        &::before
-          content: 'Elige una'
-      &-top2
-        top: 20px
-        &::before
-          content: 'y empieza a jugar'
-      &-bottom
-        margin-top: -10px
-        font-family: $font-caesar
-        font-size: 98px
-        line-height: 118px
-        letter-spacing: 0.03em
-        background: linear-gradient(180deg, #4E1802 35%, #4E1C00 58.49%, #EF631A 71.67%)
-        -webkit-background-clip: text
-        -webkit-text-fill-color: transparent
-        background-clip: text
-        text-fill-color: transparent
-        position: relative
-        z-index: 3
-        top: 20px
-        left: 35px
-        padding: 1px
-        &::before
-          content: 'bonificación'
-          position: absolute
-          z-index: 1
-          left: 0
-          top: -5px
-          font-family: $font-caesar
-          font-size: 98px
-          line-height: 118px
-          letter-spacing: 0.03em
-          background: linear-gradient(180deg, #FFF325 35%, #F89E0A 58.49%, #FFF325 71.67%)
-          -webkit-background-clip: text
-          -webkit-text-fill-color: transparent
-          background-clip: text
-          text-fill-color: transparent
-          -webkit-text-stroke: 1px rgba(255, 255, 255, 1)
-          padding: 1px
-    &-bubble
-      z-index: 5
-      position: absolute
-      right: 100px
-      top: -20px
-      transform: scale(1.15)
-      width: 150px
-      height: 140px
-      padding: 24px 27px 21px 10px
-      background:  url("../img/bubble-desc.png") no-repeat 50% 0/contain
-      font-family: $font-caesar
-      font-size: 15px
-      line-height: 18px
-      text-align: center
-      letter-spacing: 0.03em
-      color: #000055
+      &::before
+        content: attr(data-before)
+        color: transparent
+        font-size: inherit
+        font-family: inherit
+        text-shadow: 0px 2px 2px rgba(18, 15, 10, 0.80)
+        z-index: 1
+        position: absolute
+        width: 83%
+        height: 100%
+        left: 0
+        top: 0
+        text-transform: uppercase
+      &::after
+        content: attr(data-after)
+        color: transparent
+        font-size: inherit
+        font-family: inherit
+        text-shadow: 0px 2px 2px rgba(18, 15, 10, 0.80)
+        z-index: 1
+        position: absolute
+        width: 100%
+        height: 33%
+        left: 0
+        bottom: 0
+        text-transform: uppercase
     &-image
       animation: 3s infinite zevs ease
-      height: 95vh
+      height: 145vh
       position: absolute
-      width: 54vh
-      top: 35px
-      left: 48%
+      width: 106vh
+      top: -225px
+      left: 46%
       transform: translateX(-50%) scale(.9)
       z-index: 1
       picture
@@ -545,10 +292,16 @@ body
       bottom: 90px
     &-slots
       position: relative
-      width: 900px
-      height: 665px
-
-
+      width: 700px
+      height: 625px
+    &-footer
+      position: absolute
+      z-index: 12
+      background: url("../img/footer.png") no-repeat 0 0/contain
+      width: 515px
+      height: 25px
+      bottom: 50px
+      left: 40px
 .pulse-btn
   animation: 1.2s infinite pulse-btn ease-in-out
   @media screen and (max-width: 600px) and (orientation: portrait)
@@ -690,18 +443,18 @@ body
   justify-content: center
   white-space: nowrap
   cursor: pointer
-  width: 280px
-  height: 107px
-  background: url("../img/btn-normal.png") no-repeat 0 0/contain
+  width: 215px
+  height: 215px
+  background: url("../img/btn-first.png") no-repeat 0 0/contain
   left: 50%
-  transform: translateX(-50%)
-  bottom: -62px
+  bottom: -215px
   transition: background .3s ease
+  transform: translateX(-50%)
   &:hover
-    background: url("../img/btn-hover.png") no-repeat 0 0/contain
+    cursor: pointer
   span
     margin-top: -15px
-    font-family: $font-caesar
+    font-family: $font-perpetua-bold
     white-space: nowrap
     font-size: 40px
     line-height: 44px
@@ -723,7 +476,7 @@ body
       left: 50%
       transform: translateX(-50%)
       top: -3px
-      font-family: $font-caesar
+      font-family: $font-perpetua-bold
       font-size: 40px
       line-height: 44px
       letter-spacing: 0.03em
@@ -779,16 +532,16 @@ body
     @media screen and (max-width: 1300px) and (orientation: portrait)
       //top: -3630px
       //top: -2905px
-      top: -2885px
+      top: -2848px
     @media screen and (max-width: 1366px) and (max-height: 1000px)
       //top: -3630px
-      top: -2885px
+      top: -2848px
     @media screen and (max-width: 600px) and (orientation: portrait)
       //top: -3630px
-      top: -2885px
+      top: -2848px
     @media screen and (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
       //top: -3630px
-      top: -2885px
+      top: -2848px
 .slots
   &.spinning
     .outer-col
@@ -870,6 +623,14 @@ body
   100%
     transform: translateX(-50%) scale(1)
 
+@keyframes pulse-btn-tab
+  0%
+    transform: translate(100%, 50%) scale(1)
+  50%
+    transform: translate(100%, 50%) scale(1.07)
+  100%
+    transform: translate(100%, 50%) scale(1)
+
 @keyframes pulse-btn-mob
   0%
     transform: translateX(-50%) scale(1.3)
@@ -905,11 +666,11 @@ body
 
 @keyframes zevs-tab
   0%
-    transform: translateX(-50%) translateY(-10px)
+    transform: translateY(-10px)
   50%
-    transform: translateX(-50%) translateY(10px)
+    transform: translateY(10px)
   100%
-    transform: translateX(-50%) translateY(-10px)
+    transform: translateY(-10px)
 
 
 @keyframes lamps-light
@@ -926,11 +687,25 @@ body
   100%
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%)
 
+@keyframes starAnim
+  0%
+    transform: scale(.7) rotate(15deg)
+  100%
+    transform: scale(1) rotate(0deg)
+
+@keyframes bgMove
+  0%
+    background-position: 0 0
+  100%
+    background-position: 0 20000px
+
+.starAnim
+  transform: scale(1)
 
 .hide
   display: none
 
-.opacity-overlay
-  opacity: 0
-  visibility: hidden
+//.opacity-overlay
+//  opacity: 0
+//  visibility: hidden
 

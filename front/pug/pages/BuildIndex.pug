@@ -2,55 +2,51 @@
   .bonus__overlay.opacity-overlay
     .bonus__firstWin.hide
       .bonus__firstWin-image
-        .bonus__firstWin-bubble Enhorabuena!
         picture.land__firstWin-main
-          source(media="(max-width: 600px) and (orientation: portrait)" srcset="img/zevs-popup1-mob.png")
-          source(media="(max-width: 920px) and (orientation: landscape) and (max-height: 450px)" srcset="img/zevs-popup1-mob.png")
-          source(media="(min-width: 601px) and (max-width: 1300px) and (orientation: portrait)" srcset="img/zevs-popup1-desc.png")
-          source(media="(min-width: 601px) and (orientation: landscape)" srcset="img/zevs-popup1-desc.png")
-          img(src="img/zevs-popup1-desc.png" alt="Favbet")
+          source(media="(max-width: 600px) and (orientation: portrait)" srcset="img/pers-mob.png")
+          source(media="(max-width: 920px) and (orientation: landscape) and (max-height: 450px)" srcset="img/pers-mob.png")
+          source(media="(min-width: 601px) and (max-width: 1300px) and (orientation: portrait)" srcset="img/pers-desc.png")
+          source(media="(min-width: 601px) and (orientation: landscape)" srcset="img/pers-desc.png")
+          img(src="img/pers-desc.png" alt="Favbet")
       .bonus__firstWin-info
-        .bonus__firstWin-win Bonificación
-        .bonus__firstWin-win2 de bienvenida del 100%
-        .bonus__firstWin-title
-          .bonus__firstWin-title-top HASTA 1100 PEN
-        .bonus__firstWin-text Resta mais uma tentativa
-        .bonus__firstWin-btn #[span Tente novamente]
-    .bonus__secondWin.hide
+        .bonus__star1._star1
+        .bonus__star2._star1
+        .bonus__star3._star1
+        .bonus__popup-logo
+        .bonus__firstWin-title Luck is on your side
+        .bonus__firstWin-win
+          img(src="./img/firstWinText.png" alt="+700%")
+        .bonus__firstWin-btn #[span(data-before="Spin more") Spin more]
+    .bonus__secondWin
       .bonus__secondWin-image
-        .bonus__secondWin-bubble #[span Enhorabuena!] #[br] eres una leyenda del mundo antiguo!
         picture.land__firstWin-main
-          source(media="(max-width: 600px) and (orientation: portrait)" srcset="img/zevs-popup2-mob.png")
-          source(media="(max-width: 920px) and (orientation: landscape) and (max-height: 450px)" srcset="img/zevs-popup2-mob.png")
-          source(media="(min-width: 601px) and (max-width: 1300px) and (orientation: portrait)" srcset="img/zevs-popup2-desc.png")
-          source(media="(min-width: 601px) and (orientation: landscape)" srcset="img/zevs-popup2-desc.png")
-          img(src="img/zevs-popup2-desc.png" alt="Favbet")
+          source(media="(max-width: 600px) and (orientation: portrait)" srcset="img/pers-mob.png")
+          source(media="(max-width: 920px) and (orientation: landscape) and (max-height: 450px)" srcset="img/pers-mob.png")
+          source(media="(min-width: 601px) and (max-width: 1300px) and (orientation: portrait)" srcset="img/pers-desc.png")
+          source(media="(min-width: 601px) and (orientation: landscape)" srcset="img/pers-desc.png")
+          img(src="img/pers-desc.png" alt="Favbet")
       .bonus__secondWin-info
-        .bonus__secondWin-win Bonificación
-        .bonus__secondWin-win2 de bienvenida del 100%
-        .bonus__secondWin-title
-          .bonus__secondWin-title-top HASTA 1100 PEN
-        .bonus__secondWin-plus +
-        .bonus__secondWin-title2
-          .bonus__secondWin-title2-top 150 giros gratis
-        a(href='https://tds.favbet.partners' target="_blank").bonus__secondWin-more Vuelve a intentarlo
-        a(href='https://tds.favbet.partners' target="_blank").bonus__secondWin-btn #[span Consigue la bonificación]
+        .bonus__star1._star2
+        .bonus__star2._star2
+        .bonus__star3._star2
+        .bonus__popup-logo
+        .bonus__secondWin-title Luck is on your side
+        .bonus__secondWin-win
+          img(src="./img/secondWinText.png" alt="700% + 500free spins")
+        a(href='https://tds.favbet.partners' target="_blank").bonus__secondWin-btn #[span(data-before="Get the bonus") Get the bonus]
   .bonus__main
     .bonus__main-logo
-    .bonus__main-txt
-      .bonus__main-txt-top Elige una
-      .bonus__main-txt-bottom bonificación
-      .bonus__main-txt-top2 y empieza a jugar
+    .bonus__main-txt(data-before="Spin to get" data-after="a bonus") #[span.bonus__main-txt-content Spin <br> to get <br> a bonus]
     .bonus__main-image
-      .bonus__main-bubble Tienes dos oportunidades, mortal
       picture.land__image-main
-        source(media="(max-width: 600px) and (orientation: portrait)" srcset="img/zevs-mob.png")
-        source(media="(max-width: 920px) and (orientation: landscape) and (max-height: 450px)" srcset="img/zevs-mob.png")
-        source(media="(min-width: 601px) and (max-width: 1300px) and (orientation: portrait)" srcset="img/zevs-desc.png")
-        source(media="(min-width: 601px) and (orientation: landscape)" srcset="img/zevs-desc.png")
-        img(src="img/zevs-desc.png" alt="Favbet")
+        source(media="(max-width: 600px) and (orientation: portrait)" srcset="img/pers-mob.png")
+        source(media="(max-width: 920px) and (orientation: landscape) and (max-height: 450px)" srcset="img/pers-mob.png")
+        source(media="(min-width: 601px) and (max-width: 1300px) and (orientation: portrait)" srcset="img/pers-desc.png")
+        source(media="(min-width: 601px) and (orientation: landscape)" srcset="img/pers-desc.png")
+        img(src="img/pers-desc.png" alt="Favbet")
     .bonus__main-wrapper
-      .play-btn.pulse-btn #[span GO]
+      .bonus__main-slot-logo
+      .play-btn.pulse-btn
       .bonus__main-slots
         .slots
           .window
@@ -64,7 +60,4 @@
               .col
             .outer-col
               .col
-  .bonus__lighting-one
-  .bonus__lighting-two
-  .bonus__pilars-one
-  .bonus__pilars-two
+    .bonus__main-footer

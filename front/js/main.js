@@ -46,7 +46,9 @@ const playBtn = document.querySelector('.play-btn'),
     wrapper = document.querySelector('.bonus'),
     bubbleText = document.querySelector('.bonus__main-bubble'),
     winOuter = document.querySelector('.outer-col-win'),
-    slotsWindow = document.querySelector(".window")
+    slotsWindow = document.querySelector(".window"),
+    firstWinStar = document.querySelectorAll("._star1"),
+    secondWinStar = document.querySelectorAll("._star2")
 
 
 //slots
@@ -158,24 +160,21 @@ function spin() {
         try {
             await reelSound.play();
 
-            // Затримка (3500 мс) перед паузою
             await delaySound(3000);
 
-            // Зупинка звуку кручення колеса
             reelSound.pause();
             reelSound.currentTime = 0;
 
             slotSound.play()
+
             await delaySound(700);
 
             winSlots.play()
 
             await delaySound(2700);
             popupSound.play()
-
-
         } catch (error) {
-            console.error("Помилка при відтворенні звуків: ", error);
+            console.error("sounds play error: ", error);
         }
     })();
 
@@ -333,7 +332,7 @@ function spin() {
 }
 
 let triesCounter = 0
-let babbleTextAfterRotation = 'Tienes una oportunidad, mortal'
+// let babbleTextAfterRotation = 'Tienes una oportunidad, mortal'
 
 playBtn.addEventListener('click', () => {
     if (triesCounter === 0) {
@@ -355,14 +354,20 @@ function runFirstRotation() {
 }
 
 function doAfterFirstRotation() {
-    bubbleText.innerHTML  = babbleTextAfterRotation;
+    // bubbleText.innerHTML  = babbleTextAfterRotation;
     displayPopup(popupFirst)
     wrapper.style.pointerEvents = 'auto'
     overflow.style.overflow = 'hidden'
     setTimeout(() => {
+        firstWinStar.forEach((star, i) =>{
+            setTimeout(() =>{
+                star.classList.add("starAnim")
+            }, i*400 )
+        })
         playBtn.classList.add('pulse-btn')
         playBtn.style.cursor = 'pointer'
-    }, 1200)
+        playBtn.style.background = `url("../img/btn-second.png") no-repeat 0 0/contain`
+    }, 700)
 }
 
 function runSecondRotation() {
@@ -380,6 +385,14 @@ function runSecondRotation() {
 function doAfterSecondRotation() {
     displayPopup(popupSecond)
     wrapper.style.pointerEvents = 'auto'
+    setTimeout(() =>{
+        secondWinStar.forEach((star, i) =>{
+            setTimeout(() =>{
+                star.classList.add("starAnim")
+            }, i*400 )
+    })
+
+    }, 700)
 }
 
 popupFirstBtn.addEventListener('click', () => {

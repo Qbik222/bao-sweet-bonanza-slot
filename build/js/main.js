@@ -50,7 +50,9 @@ var playBtn = document.querySelector('.play-btn'),
   wrapper = document.querySelector('.bonus'),
   bubbleText = document.querySelector('.bonus__main-bubble'),
   winOuter = document.querySelector('.outer-col-win'),
-  slotsWindow = document.querySelector(".window");
+  slotsWindow = document.querySelector(".window"),
+  firstWinStar = document.querySelectorAll("._star1"),
+  secondWinStar = document.querySelectorAll("._star2");
 
 //slots
 var icons = ['win111.png', 'win3.png', 'win4.png', 'win5.png', 'win6.png', 'win7.png', 'win8.png'];
@@ -146,7 +148,6 @@ function spin() {
             _context.next = 5;
             return delaySound(3000);
           case 5:
-            // Зупинка звуку кручення колеса
             reelSound.pause();
             reelSound.currentTime = 0;
             slotSound.play();
@@ -163,7 +164,7 @@ function spin() {
           case 16:
             _context.prev = 16;
             _context.t0 = _context["catch"](0);
-            console.error("Помилка при відтворенні звуків: ", _context.t0);
+            console.error("sounds play error: ", _context.t0);
           case 19:
           case "end":
             return _context.stop();
@@ -312,7 +313,8 @@ function spin() {
   }, 3500);
 }
 var triesCounter = 0;
-var babbleTextAfterRotation = 'Tienes una oportunidad, mortal';
+// let babbleTextAfterRotation = 'Tienes una oportunidad, mortal'
+
 playBtn.addEventListener('click', function () {
   if (triesCounter === 0) {
     runFirstRotation();
@@ -331,14 +333,20 @@ function runFirstRotation() {
   triesCounter++;
 }
 function doAfterFirstRotation() {
-  bubbleText.innerHTML = babbleTextAfterRotation;
+  // bubbleText.innerHTML  = babbleTextAfterRotation;
   displayPopup(popupFirst);
   wrapper.style.pointerEvents = 'auto';
   overflow.style.overflow = 'hidden';
   setTimeout(function () {
+    firstWinStar.forEach(function (star, i) {
+      setTimeout(function () {
+        star.classList.add("starAnim");
+      }, i * 400);
+    });
     playBtn.classList.add('pulse-btn');
     playBtn.style.cursor = 'pointer';
-  }, 1200);
+    playBtn.style.background = "url(\"../img/btn-second.png\") no-repeat 0 0/contain";
+  }, 700);
 }
 function runSecondRotation() {
   playBtn.classList.remove('pulse-btn');
@@ -354,6 +362,13 @@ function runSecondRotation() {
 function doAfterSecondRotation() {
   displayPopup(popupSecond);
   wrapper.style.pointerEvents = 'auto';
+  setTimeout(function () {
+    secondWinStar.forEach(function (star, i) {
+      setTimeout(function () {
+        star.classList.add("starAnim");
+      }, i * 400);
+    });
+  }, 700);
 }
 popupFirstBtn.addEventListener('click', function () {
   overlay.classList.add('opacity-overlay');
