@@ -211,6 +211,12 @@
       &-image
         right: -200px
 
+@media screen and (max-width: 1500px) and (max-height: 660px)
+  .bonus
+    &__main
+      &-wrapper
+        transform: scale(.6)
+
 @media screen and (max-width: 1465px)
   .bonus
     &__main
@@ -319,12 +325,12 @@
   .bonus
     &__main
       &-image
-        left: 49.5%
-        width: 46vh
-        top: 125px
+        left: 43.5%
+        width: 66vh
+        top: -95px
       &-wrapper
-        transform: scale(0.6)
-        right: 310px
+        transform: scale(0.7)
+        right: 20px
       &-txt
         transform: scale(0.65)
 
@@ -403,6 +409,7 @@
       //padding: 60px 1px 0 61px
       &-wrapper
         transform: scale(0.55)
+        right: 20px
         //transform-origin: center
         //right: 190px
 
@@ -682,6 +689,13 @@
         transform: scale(.9)
         transform-origin: bottom left
 
+@media screen and (max-width: 1050px) and (orientation: portrait) and (min-height: 1300px)
+  .bonus
+    &__main
+      &-image
+        width: 65vw
+        top: 40px
+
 
 @media screen and (max-width: 860px) and (orientation: portrait)
   .bonus
@@ -722,6 +736,12 @@
         transform: scale(.85)
         //left: -10px
         transform-origin: top left
+
+@media screen and (max-width: 840px) and (orientation: portrait) and (min-height: 1100px)
+  .bonus
+    &__main
+      &-image
+        width: 64vw
 
 @media screen and (max-width: 840px) and (orientation: portrait) and (max-height: 1050px)
   .bonus
@@ -941,7 +961,7 @@
       &-wrapper
         right: auto
         left: 50%
-        bottom: 50px
+        bottom: 70px
         transform-origin: center
         transform: translateX(-50%) scale(0.5)
         margin: 0 auto
@@ -985,7 +1005,7 @@
         transform: scale(1.2)
 
 
-@media screen and (max-width: 400px) and (orientation: portrait)
+@media screen and (max-width: 410px) and (orientation: portrait)
   .bonus
     &__main
       &-txt
@@ -1023,9 +1043,12 @@
 
 @media screen and (max-width: 380px) and (orientation: portrait) and (max-height: 675px)
   .bonus
+    &__firstWin, &__secondWin
+      margin-top: -60px
     &__main
       &-wrapper
-        transform: translateX(-50%) scale(0.43)
+        transform: translateX(-50%) scale(0.4)
+        bottom: 95px
 
 @media screen and (max-width: 385px) and (orientation: portrait) and (max-height: 615px)
   .bonus
@@ -1187,13 +1210,6 @@
         transform: scale(0.3)
         margin-top: -40px
 
-@media screen and (max-width: 950px) and (max-height: 310px) and (orientation: landscape)
-  .bonus
-    &__firstWin,
-    &__secondWin
-      &-info
-        transform: scale(0.3)
-        margin-top: -20px
 
 @media screen and (max-width: 950px) and (max-height: 410px) and (orientation: landscape)
   .bonus
@@ -1228,6 +1244,7 @@
     &__secondWin
       &-image
         top: 20px
+
 
 @media screen and (max-width: 820px) and (max-height: 380px) and (orientation: landscape)
   .bonus
@@ -1337,9 +1354,18 @@
       &-image
         top: -65px
 
-@media screen and (max-width: 950px) and (max-height: 300px) and (orientation: landscape)
+@media screen and (max-width: 770px) and (max-height: 325px) and (orientation: landscape)
   .bonus
     &__main
       &-wrapper
-        transform: translateX(48%) scale(0.25)
-        bottom: 80px
+        transform: translateX(48%) scale(0.32)
+        bottom: 60px
+        right: 375px
+
+
+@media screen and (max-width: 950px) and (max-height: 310px) and (orientation: landscape)
+  .bonus
+    &__main
+      &-wrapper
+        transform: translateX(48%) scale(0.3)
+        bottom: 60px
