@@ -366,7 +366,7 @@ function doAfterFirstRotation() {
         })
         playBtn.classList.add('pulse-btn')
         playBtn.style.cursor = 'pointer'
-        playBtn.style.background = `url("../img/btn-second.png") no-repeat 0 0/contain`
+        // playBtn.style.background = `url("../img/btn-second.png") no-repeat 0 0/contain`
     }, 700)
 }
 
