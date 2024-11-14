@@ -6,9 +6,10 @@ $grey: #EDEDED
 $white: #FFFFFF
 $text: #292929
 $yellow: #EAB429
+$purple: #61137B
 
-$font-inter-semib: Inter-SemiBold, sans-serif //400
-$font-perpetua-bold: Perpetua-Bold, sans-serif //700
+$font-lilita-one: LilitaOne-Regular, sans-serif //400
+$font-roboto-condensed-reg: RobotoCondensed-Regular, sans-serif //700
 
 body
   -webkit-tap-highlight-color: rgba(0,0,0,0)
@@ -125,7 +126,7 @@ body
       flex-direction: column
       align-items: center
       position: relative
-      font-family: $font-perpetua-bold
+      font-family: $font-roboto-condensed-reg
       font-size: 42px
       line-height: 42px
       color: $yellow
@@ -135,7 +136,7 @@ body
       max-width: 256px
       margin: 10px 0 40px 0
     &-text
-      font-family: $font-inter-semib
+      font-family: $font-lilita-one
       font-size: 16px
       line-height: 22px
       letter-spacing: 0.03em
@@ -162,7 +163,7 @@ body
         left: 50%
         transform: translate(-50%, -43%)
         top: 50%
-        font-family: $font-inter-semib
+        font-family: $font-lilita-one
         font-size: 30px
         line-height: 34px
         letter-spacing: 0.03em
@@ -172,7 +173,7 @@ body
         text-shadow: 0px 6.24px 6.24px rgba(0, 0, 0, 0.25), 0px -1.56px 0px #FFECA8
       span
         margin-top: -15px
-        font-family: $font-inter-semib
+        font-family: $font-lilita-one
         white-space: nowrap
         font-size: 30px
         line-height: 34px
@@ -194,7 +195,7 @@ body
     height: 65px
     z-index: 1
   &__main
-    padding: 60px 25px 0 60px
+    padding: 60px 25px 0 40px
     height: 100%
     width: 100%
     position: relative
@@ -203,35 +204,31 @@ body
     justify-content: space-between
     &-logo
       background: url("../img/logo.png") no-repeat 0 0/contain
-      width: 312px
-      height: 90px
+      width: 213px
+      height: 47px
       position: absolute
       top: 50px
       left: 40px
       z-index: 1
     &-slot-logo
-      width: 393px
-      height: 162px
+      width: 800px
+      height: 148px
       background: url("../img/slots/slots-logo.png") no-repeat 0 0/contain
       position: absolute
       top: 0
-      left: -20px
-      transform: translate(0, -80%)
+      left: 50%
+      transform: translate(-50%, -80%)
       z-index: 11
     &-txt
-      margin-top: -90px
+      margin-top: 90px
       z-index: 5
       position: relative
-      font-family: $font-perpetua-bold
-      font-size: 120px
-      line-height: 120px
+      font-family: $font-lilita-one
+      font-size: 100px
+      line-height: 108px
+      align-self: flex-start
       &-content
-        background: linear-gradient(180deg, #975F1D -15.69%, #E3A31C -1.86%, #EFC232 23.88%, #FEDB6A 44.36%, #FEDB6A 64.34%, #DBA228 91.05%, #844E10 104.41%)
-        background-clip: text
-        -webkit-background-clip: text
-        -webkit-text-fill-color: transparent
-        -webkit-text-stroke-width: 1px
-        -webkit-text-stroke-color: #975F1D
+        color: $white
         font-family: inherit
         font-size: inherit
         line-height: inherit
@@ -240,60 +237,62 @@ body
         position: relative
       &::before
         content: attr(data-before)
-        color: transparent
+        //color: transparent
         font-size: inherit
         font-family: inherit
-        text-shadow: 0px 2px 2px rgba(18, 15, 10, 0.80)
+        //text-shadow: 0px 2px 2px rgba(18, 15, 10, 0.80)
+        color: $purple
         z-index: 1
         position: absolute
-        width: 83%
+        width: 100%
         height: 100%
         left: 0
         top: 0
         text-transform: uppercase
+        -webkit-text-stroke-width: 21px
+
       &::after
         content: attr(data-after)
-        color: transparent
         font-size: inherit
         font-family: inherit
-        text-shadow: 0px 2px 2px rgba(18, 15, 10, 0.80)
+        -webkit-text-stroke-width: 21px
+        color: $purple
         z-index: 1
         position: absolute
         width: 100%
-        height: 33%
+        height: 50%
         left: 0
         bottom: 0
         text-transform: uppercase
     &-image
       animation: 3s infinite zevs ease
-      height: 145vh
       position: absolute
-      width: 106vh
-      top: -225px
+      max-width: 720px
+      bottom: 0
       left: 46%
-      transform: translateX(-50%) scale(.9)
+      transform: translateX(-50%)
       z-index: 1
-      picture
-        height: 100%
-        position: absolute
-        top: 0
+      //picture
+      //  height: 100%
+      //  position: absolute
+      //  top: 0
     &-wrapper
       transform-origin: right center
-      transform: scale(.95)
+      //transform: scale(.95)
       position: relative
       z-index: 4
       display: flex
       bottom: 90px
     &-slots
       position: relative
-      width: 700px
+      width: 900px
       height: 625px
     &-footer
       position: absolute
       z-index: 12
       background: url("../img/footer.png") no-repeat 0 0/contain
-      width: 515px
-      height: 25px
+      width: 520px
+      height: 50px
       bottom: 50px
       left: 40px
 .pulse-btn
@@ -316,13 +315,13 @@ body
   height: 100%
   /*animation: wiggle 0.4s linear infinite;*/
   &-wrap
-    width: 108px
-    height: 90px
+    width: 112px
+    height: 112px
     display: inline-block
     z-index: 10
     position: relative
-    &:not(:last-child)
-      margin-bottom: 12px
+    //&:not(:last-child)
+    //  margin-bottom: 12px
     &::before
       content: ""
       display: block
@@ -335,9 +334,9 @@ body
       z-index: 10
       opacity: 0
 .slots
-  width: 700px
-  height: 575px
-  padding: 20px 0 0 40px
+  width: 900px
+  height: 600px
+  padding: 10px
   position: relative
   @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 451px)
     background:  url('../img/slots/casino-desc.png') no-repeat 50% 0/contain
@@ -347,53 +346,54 @@ body
     background:  url("../img/slots/casino-mob.png") no-repeat 50% 0%/contain
   @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
     background:  url("../img/slots/casino-mob.png") no-repeat 50% 0/contain
-  &::before
-    content: ''
-    position: absolute
-    width: 100%
-    height: 100%
-    top: 0
-    left: 0
-    z-index: 10
-    @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 451px)
-      background:  url('../img/slots/casino-desc-frame.png') no-repeat 50% 0/contain
-    @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
-      background:   url('../img/slots/casino-desc-frame.png') no-repeat 50% 0/contain
-    @media screen and (max-width: 600px) and (orientation: portrait)
-      background:  url("../img/slots/casino-mob-frame.png") no-repeat 50% 0%/contain
-    @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
-      background:  url("../img/slots/casino-mob-frame.png") no-repeat 50% 0/contain
+  //&::before
+  //  content: ''
+  //  position: absolute
+  //  width: 100%
+  //  height: 100%
+  //  top: 0
+  //  left: 0
+  //  z-index: 10
+  //  @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 451px)
+  //    background:  url('../img/slots/casino-desc-frame.png') no-repeat 50% 0/contain
+  //  @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
+  //    background:   url('../img/slots/casino-desc-frame.png') no-repeat 50% 0/contain
+  //  @media screen and (max-width: 600px) and (orientation: portrait)
+  //    background:  url("../img/slots/casino-mob-frame.png") no-repeat 50% 0%/contain
+  //  @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
+  //    background:  url("../img/slots/casino-mob-frame.png") no-repeat 50% 0/contain
 .window
   position: relative
-  left: -34px
+  left: 0
   top: 0px
-  width: 700px
+  width: 900px
   overflow: hidden
-  height: 525px
+  height: 580px
   &::before
     content: ""
     display: block
-    width: 100%
+    width: 97%
     height: 100%
     z-index: 7
     opacity: 0
     position: absolute
     transition: all .4s ease-in-out
     background: rgba(1, 7, 16, 0.80)
+    border-radius: 30px
   &.afterSpin, &.afterSecondSpin
     &::before
       opacity: 1
-    &::after
-      content: ""
-      display: block
-      width: 89%
-      height: 90%
-      position: absolute
-      z-index: 8
-      background: url("../img/slots/winFirstDecor.png") no-repeat 0 0/contain
-      top: 150px
-      left: 50px
-      animation: clipLeftToRight 1.5s ease-in-out
+    //&::after
+    //  content: ""
+    //  display: block
+    //  width: 89%
+    //  height: 90%
+    //  position: absolute
+    //  z-index: 8
+    //  background: url("../img/slots/winFirstDecor.png") no-repeat 0 0/contain
+    //  top: 150px
+    //  left: 50px
+    //  animation: clipLeftToRight 1.5s ease-in-out
     .icon
       opacity: .1
       transition: opacity .4s ease-in-out
@@ -413,16 +413,16 @@ body
     .icon
       &-wrap
         &::before
-          background: url("../img/slots/winFirst.png") no-repeat 0 0/contain
+          background: url("../img/slots/win8.png") no-repeat 0 0/contain
   &.afterSecondSpin
-    &::after
-      background: url("../img/slots/winSecondDecor.png") no-repeat 0 0/contain
-      top: 130px
-      left: 38px
+    //&::after
+    //  background: url("../img/slots/winSecondDecor.png") no-repeat 0 0/contain
+    //  top: 130px
+    //  left: 38px
     .icon
       &-wrap
         &::before
-          background: url("../img/slots/winSecond.png") no-repeat 0 0/contain
+          background: url("../img/slots/win8.png") no-repeat 0 0/contain
 .play-btn
   position: absolute
   z-index: 11
@@ -442,7 +442,7 @@ body
     cursor: pointer
   span
     margin-top: -15px
-    font-family: $font-perpetua-bold
+    font-family: $font-roboto-condensed-reg
     white-space: nowrap
     font-size: 40px
     line-height: 44px
@@ -464,7 +464,7 @@ body
       left: 50%
       transform: translateX(-50%)
       top: -3px
-      font-family: $font-perpetua-bold
+      font-family: $font-roboto-condensed-reg
       font-size: 40px
       line-height: 44px
       letter-spacing: 0.03em
@@ -478,12 +478,12 @@ body
 .outer-col
   width: 126px
   float: left
-  margin: 0 8px 0 5px
+  margin: 0 10px
 .col
   padding: 10px
   will-change: true
   position: relative
-  top: -2855px
+  top: -3260px
   z-index: 9
   &._ios
     @media screen and (max-width: 1300px) and (orientation: portrait)
@@ -524,9 +524,9 @@ body
   0%
     transform: translate3d(0,0,0)
   90%
-    transform: translate3d(0,calc(100% - 510px),0)
+    transform: translate3d(0,calc(100% - 580px),0)
   100%
-    transform: translate3d(0,calc(100% - 523px),0)
+    transform: translate3d(0,calc(100% - 600px),0)
 
 @keyframes scroll-mob
   0%
@@ -603,22 +603,22 @@ body
     opacity: 1
   100%
     opacity: 0
-
-@keyframes zevs
-  0%
-    transform: translateX(-50%) translateY(-10px) scale(.85)
-  50%
-    transform: translateX(-50%) translateY(10px) scale(.85)
-  100%
-    transform: translateX(-50%) translateY(-10px) scale(.85)
-
-@keyframes zevs-tab
-  0%
-    transform: translateY(-10px)
-  50%
-    transform: translateY(10px)
-  100%
-    transform: translateY(-10px)
+//
+//@keyframes zevs
+//  0%
+//    transform: translateX(-50%) translateY(-10px) scale(.85)
+//  50%
+//    transform: translateX(-50%) translateY(10px) scale(.85)
+//  100%
+//    transform: translateX(-50%) translateY(-10px) scale(.85)
+//
+//@keyframes zevs-tab
+//  0%
+//    transform: translateY(-10px)
+//  50%
+//    transform: translateY(10px)
+//  100%
+//    transform: translateY(-10px)
 
 @keyframes lamps-light
   0%
