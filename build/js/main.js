@@ -32,27 +32,19 @@ var slotSound = new _howler.Howl({
   volume: 1.0,
   loop: false
 });
-document.addEventListener('click', function () {
-  return backgroundMusic.play();
-}, {
-  once: true
-});
-window.addEventListener('orientationchange', function () {
+document.addEventListener('orientationchange', function () {
   window.location.reload();
 });
 var playBtn = document.querySelector('.play-btn'),
-  main = document.querySelector('.bonus__main'),
   overlay = document.querySelector('.bonus__overlay'),
   popupFirst = document.querySelector('.bonus__firstWin'),
   popupFirstBtn = document.querySelector('.bonus__firstWin-btn'),
   popupSecond = document.querySelector('.bonus__secondWin'),
   overflow = document.querySelector('body'),
   wrapper = document.querySelector('.bonus'),
-  bubbleText = document.querySelector('.bonus__main-bubble'),
   winOuter = document.querySelector('.outer-col-win'),
   slotsWindow = document.querySelector(".window"),
-  firstWinStar = document.querySelectorAll("._star1"),
-  secondWinStar = document.querySelectorAll("._star2");
+  decorItems = document.querySelectorAll("._decor");
 
 //slots
 var icons = ['win3.png', 'win4.png', 'win5.png', 'win6.png', 'win7.png', 'win8.png'];
@@ -346,8 +338,6 @@ function spin() {
   }, 3500);
 }
 var triesCounter = 0;
-// let babbleTextAfterRotation = 'Tienes una oportunidad, mortal'
-
 playBtn.addEventListener('click', function () {
   if (triesCounter === 0) {
     runFirstRotation();
@@ -371,9 +361,9 @@ function doAfterFirstRotation() {
   wrapper.style.pointerEvents = 'auto';
   overflow.style.overflow = 'hidden';
   setTimeout(function () {
-    firstWinStar.forEach(function (star, i) {
+    decorItems.forEach(function (star, i) {
       setTimeout(function () {
-        star.classList.add("starAnim");
+        star.classList.add("decorAnim");
       }, i * 400);
     });
     playBtn.classList.add('pulse-btn');
@@ -397,9 +387,9 @@ function doAfterSecondRotation() {
   wrapper.style.pointerEvents = 'none';
   document.querySelector(".all-link").classList.remove("hide");
   setTimeout(function () {
-    secondWinStar.forEach(function (star, i) {
+    decorItems.forEach(function (star, i) {
       setTimeout(function () {
-        star.classList.add("starAnim");
+        star.classList.add("decorAnim");
       }, i * 400);
     });
   }, 700);
@@ -416,10 +406,16 @@ popupFirstBtn.addEventListener('click', function () {
   colsImg4[31].parentElement.classList.remove('_winAnim');
   colsImg5[30].parentElement.classList.remove('_winAnim');
   colsImg6[29].parentElement.classList.remove('_winAnim');
+  decorItems.forEach(function (star, i) {
+    setTimeout(function () {
+      star.classList.remove("decorAnim");
+    }, i * 400);
+  });
 });
 function displayPopup(popup) {
   overlay.classList.remove('opacity-overlay');
   popup.classList.remove('hide');
+  popup.querySelector(".anim-pers").style.animationPlayState = "initial";
 }
 cols.forEach(function (item) {
   if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
@@ -430,6 +426,49 @@ cols.forEach(function (item) {
     item.classList.remove('_ios');
   }
 });
+
+/// for test
+
+var popup1 = document.querySelector(".popup1");
+var popup2 = document.querySelector(".popup2");
+var close = document.querySelector(".closePopup");
+popup1.addEventListener("click", function () {
+  overlay.classList.add('opacity-overlay');
+  popupSecond.classList.add('hide');
+  displayPopup(popupFirst);
+  decorItems.forEach(function (star, i) {
+    setTimeout(function () {
+      star.classList.add("decorAnim");
+    }, i * 400);
+  });
+});
+popup2.addEventListener("click", function () {
+  overlay.classList.add('opacity-overlay');
+  popupFirst.classList.add('hide');
+  displayPopup(popupSecond);
+  decorItems.forEach(function (star, i) {
+    setTimeout(function () {
+      star.classList.add("decorAnim");
+    }, i * 400);
+  });
+});
+close.addEventListener("click", function () {
+  overlay.classList.add('opacity-overlay');
+  popupFirst.classList.add('hide');
+  popupSecond.classList.add('hide');
+  decorItems.forEach(function (star, i) {
+    setTimeout(function () {
+      star.classList.remove("decorAnim");
+    }, i * 400);
+  });
+});
+addEventListener('click', function () {
+  return backgroundMusic.play();
+}, {
+  once: true
+});
+
+// tds
 (function () {
   var url = new URL(window.location.href);
   var params = ['l', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'param1', 'param2', 'param3', 'param4', 'creative_type', 'creative_id'];

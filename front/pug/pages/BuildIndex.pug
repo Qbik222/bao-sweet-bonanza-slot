@@ -1,40 +1,45 @@
 a(href="https://tds.favbet.partners").all-link.hide
+button.popup1 popup1
+button.popup2 popup2
+button.closePopup close
 .bonus
   .bonus__overlay.opacity-overlay
+    .bonus__decor4._decor
+    .bonus__decor3._decor
+    .bonus__decor2._decor
+    .bonus__decor1._decor
     .bonus__firstWin.hide
-      .bonus__firstWin-image
-        picture.land__firstWin-main
+      .bonus__popup-logo
+      .bonus__slot-logo
+      .bonus__firstWin-image.anim-pers
+        picture
           source(media="(max-width: 600px) and (orientation: portrait)" srcset="img/pers-mob.png")
           source(media="(max-width: 920px) and (orientation: landscape) and (max-height: 450px)" srcset="img/pers-mob.png")
           source(media="(min-width: 601px) and (max-width: 1300px) and (orientation: portrait)" srcset="img/pers-desc.png")
           source(media="(min-width: 601px) and (orientation: landscape)" srcset="img/pers-desc.png")
           img(src="img/pers-desc.png" alt="Favbet")
       .bonus__firstWin-info
-        .bonus__star3._star1
-        .bonus__star2._star1
-        .bonus__star1._star1
-        .bonus__popup-logo
+        .bonus__firstWin-top big win
         .bonus__firstWin-title Luck is on your side
-        .bonus__firstWin-win
-          img(src="./img/firstWinText.png" alt="+700%")
-        .bonus__firstWin-btn #[span(data-before="Spin more") Spin more]
+        .bonus__firstWin-win +150%
+        .bonus__firstWin-bottom You have one more chance
+        .bonus__firstWin-btn Spin more
     .bonus__secondWin.hide
-      .bonus__secondWin-image
-        picture.land__firstWin-main
+      .bonus__popup-logo
+      .bonus__slot-logo
+      .bonus__secondWin-image.anim-pers
+        picture
           source(media="(max-width: 600px) and (orientation: portrait)" srcset="img/pers-mob.png")
           source(media="(max-width: 920px) and (orientation: landscape) and (max-height: 450px)" srcset="img/pers-mob.png")
           source(media="(min-width: 601px) and (max-width: 1300px) and (orientation: portrait)" srcset="img/pers-desc.png")
           source(media="(min-width: 601px) and (orientation: landscape)" srcset="img/pers-desc.png")
           img(src="img/pers-desc.png" alt="Favbet")
       .bonus__secondWin-info
-        .bonus__star3._star2
-        .bonus__star2._star2
-        .bonus__star1._star2
-        .bonus__popup-logo
+        .bonus__secondWin-top mega win
         .bonus__secondWin-title Luck is on your side
-        .bonus__secondWin-win
-          img(src="./img/secondWinText.png" alt="700% + 500free spins")
-        a(href='https://tds.favbet.partners' target="_blank").bonus__secondWin-btn #[span(data-before="Get the bonus") Get the bonus]
+        .bonus__secondWin-win 150%+100fs
+        .bonus__secondWin-bottom Your welcome bonus is waiting for you
+        a(href='https://tds.favbet.partners' target="_blank").bonus__secondWin-btn claim bonus
   .bonus__main
     .bonus__main-logo
     .bonus__main-txt(data-before="Spin to get" data-after="a bonus") #[span.bonus__main-txt-content Spin to get <br> a bonus]
@@ -47,7 +52,7 @@ a(href="https://tds.favbet.partners").all-link.hide
         img(src="img/pers-desc.png" alt="Favbet")
     .bonus__main-wrapper
       .bonus__main-slot-logo
-      .play-btn.pulse-btn
+      .play-btn.pulse-btn start
       .bonus__main-slots
         .slots
           .window

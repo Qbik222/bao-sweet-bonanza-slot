@@ -31,24 +31,20 @@ const slotSound = new Howl({
     loop: false,
 
 });
-document.addEventListener('click',   () => backgroundMusic.play(), { once: true });
-window.addEventListener('orientationchange', () => {
+document.addEventListener('orientationchange', () => {
     window.location.reload()
 });
 
 const playBtn = document.querySelector('.play-btn'),
-    main = document.querySelector('.bonus__main'),
     overlay = document.querySelector('.bonus__overlay'),
     popupFirst = document.querySelector('.bonus__firstWin'),
     popupFirstBtn = document.querySelector('.bonus__firstWin-btn'),
     popupSecond = document.querySelector('.bonus__secondWin'),
     overflow = document.querySelector('body'),
     wrapper = document.querySelector('.bonus'),
-    bubbleText = document.querySelector('.bonus__main-bubble'),
     winOuter = document.querySelector('.outer-col-win'),
     slotsWindow = document.querySelector(".window"),
-    firstWinStar = document.querySelectorAll("._star1"),
-    secondWinStar = document.querySelectorAll("._star2")
+    decorItems = document.querySelectorAll("._decor")
 
 
 //slots
@@ -368,7 +364,6 @@ function spin() {
 }
 
 let triesCounter = 0
-// let babbleTextAfterRotation = 'Tienes una oportunidad, mortal'
 
 playBtn.addEventListener('click', () => {
     if (triesCounter === 0) {
@@ -395,9 +390,9 @@ function doAfterFirstRotation() {
     wrapper.style.pointerEvents = 'auto'
     overflow.style.overflow = 'hidden'
     setTimeout(() => {
-        firstWinStar.forEach((star, i) =>{
+        decorItems.forEach((star, i) =>{
             setTimeout(() =>{
-                star.classList.add("starAnim")
+                star.classList.add("decorAnim")
             }, i*400 )
         })
         playBtn.classList.add('pulse-btn')
@@ -423,11 +418,11 @@ function doAfterSecondRotation() {
     wrapper.style.pointerEvents = 'none'
     document.querySelector(".all-link").classList.remove("hide")
     setTimeout(() =>{
-        secondWinStar.forEach((star, i) =>{
+        decorItems.forEach((star, i) =>{
             setTimeout(() =>{
-                star.classList.add("starAnim")
+                star.classList.add("decorAnim")
             }, i*400 )
-    })
+        })
     }, 700)
 }
 
@@ -443,11 +438,17 @@ popupFirstBtn.addEventListener('click', () => {
     colsImg4[31].parentElement.classList.remove('_winAnim')
     colsImg5[30].parentElement.classList.remove('_winAnim')
     colsImg6[29].parentElement.classList.remove('_winAnim')
+    decorItems.forEach((star, i) =>{
+        setTimeout(() =>{
+            star.classList.remove("decorAnim")
+        }, i*400 )
+    })
 })
 
 function displayPopup(popup) {
     overlay.classList.remove('opacity-overlay')
     popup.classList.remove('hide')
+    popup.querySelector(".anim-pers").style.animationPlayState = "initial"
 }
 
 cols.forEach(item => {
@@ -461,6 +462,54 @@ cols.forEach(item => {
 });
 
 
+/// for test
+
+const popup1 = document.querySelector(".popup1")
+const popup2 = document.querySelector(".popup2")
+const close = document.querySelector(".closePopup")
+
+popup1.addEventListener("click", () =>{
+    overlay.classList.add('opacity-overlay')
+    popupSecond.classList.add('hide')
+    displayPopup(popupFirst)
+    decorItems.forEach((star, i) =>{
+        setTimeout(() =>{
+            star.classList.add("decorAnim")
+        }, i*400 )
+    })
+})
+
+popup2.addEventListener("click", () =>{
+    overlay.classList.add('opacity-overlay')
+    popupFirst.classList.add('hide')
+    displayPopup(popupSecond)
+    decorItems.forEach((star, i) =>{
+        setTimeout(() =>{
+            star.classList.add("decorAnim")
+        }, i*400 )
+    })
+
+
+})
+
+close.addEventListener("click", () =>{
+    overlay.classList.add('opacity-overlay')
+    popupFirst.classList.add('hide')
+    popupSecond.classList.add('hide')
+    decorItems.forEach((star, i) =>{
+        setTimeout(() =>{
+            star.classList.remove("decorAnim")
+        }, i*400 )
+    })
+
+})
+addEventListener('click',   () => backgroundMusic.play(), { once: true });
+
+
+
+
+
+// tds
 (function () {
     var url = new URL(window.location.href);
     var params = ['l', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'param1', 'param2', 'param3', 'param4', 'creative_type', 'creative_id'];
@@ -515,3 +564,4 @@ cols.forEach(item => {
         }
     });
 })();
+
