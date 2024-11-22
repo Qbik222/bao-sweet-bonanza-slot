@@ -240,6 +240,13 @@
       &-image
         left: 42%
 
+@media screen and (max-width: 1500px) and (max-height: 640px)
+  .bonus
+    &__main
+      &-image
+        max-width: 470px
+
+
 //@media screen and (max-width: 1500px) and (min-height: 900px) and (orientation: landscape)
 //  .bonus
 //    &__firstWin, &__secondWin
@@ -997,7 +1004,7 @@
         left: 50%
         bottom: 0
         transform-origin: left bottom
-        transform: scale(0.4) translate(-50%, -410px)
+        transform: scale(0.4) translate(-50%, -430px)
         margin: 0 auto
         .play-btn
           left: 50%
@@ -1059,13 +1066,13 @@
 //        width: 300px
 //        height: 650px
 
-@media screen and (max-width: 400px) and (orientation: portrait) and (max-height: 788px)
+@media screen and (max-width: 405px) and (orientation: portrait) and (max-height: 788px)
   .bonus
     &__main
       &-wrapper
         transform: scale(0.4) translate(-50%, -390px)
 
-@media screen and (max-width: 400px) and (orientation: portrait) and (max-height: 700px)
+@media screen and (max-width: 405px) and (orientation: portrait) and (max-height: 700px)
   .bonus
     &__main
       &-image
@@ -1106,6 +1113,12 @@
 //      &-info
 //        transform: scale(0.37)
 //        margin-top: -62px
+
+@media screen and (max-width: 385px) and (orientation: portrait) and (max-height: 660px)
+  .bonus
+    &__main
+      &-wrapper
+        transform: scale(0.32) translate(-50%, -810px)
 
 @media screen and (max-width: 385px) and (orientation: portrait) and (max-height: 600px)
   .bonus
@@ -1244,6 +1257,8 @@
         min-width: 280px
         height: 250px
         transform: translate(-50%, -35%)
+      .pulse-btn
+        bottom: -390px
       &-wrapper
         transform: scale(.34)
 //
@@ -1279,7 +1294,7 @@
       &-wrapper
         transform: scale(.34)
       .play-btn
-        bottom: -390px
+        bottom: -405px
       &-image
         min-width: 250px
         max-width: 250px
@@ -1300,7 +1315,7 @@
         font-size: 30px
         line-height: 35px
       .play-btn
-        bottom: -410px
+        bottom: -430px
       &-wrapper
         transform: scale(.3)
 
@@ -1348,6 +1363,16 @@
         right: -240px
 
 @media screen and (max-width: 760px) and (max-height: 400px) and (orientation: landscape)
+  .bonus
+    &__main
+      &-image
+        min-width: 230px
+        max-width: 230px
+        height: 200px
+        left: 38%
+      &-txt
+        font-size: 35px
+        line-height: 40px
 
 //
 //@media screen and (max-width: 780px) and (max-height: 340px) and (orientation: landscape)
@@ -1411,12 +1436,17 @@
 
 // popups
 
-@media screen and (max-height: 960px) and (orientation: landscape)
+@media screen and (max-height: 990px) and (orientation: landscape) and (min-width: 2200px)
   .bonus
     &__firstWin, &__secondWin
       transform: scale(.9)
 
-@media screen and (max-height: 910px) and (orientation: landscape)
+@media screen and (max-height: 960px) and (orientation: landscape)
+  .bonus
+    &__firstWin, &__secondWin
+      transform: scale(.85)
+
+@media screen and (max-height: 930px) and (orientation: landscape)
   .bonus
     &__firstWin, &__secondWin
       transform: scale(.8)
@@ -1441,7 +1471,7 @@
     &__firstWin, &__secondWin
       transform: scale(.5)
 
-@media screen and (max-width: 1400px)
+@media screen and (max-width: 1700px)
   .bonus
     &__decor1
       left: 10%
