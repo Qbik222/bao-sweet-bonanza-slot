@@ -451,13 +451,25 @@ function displayPopup(popup) {
     popup.querySelector(".anim-pers").style.animationPlayState = "initial"
 }
 
+// cols.forEach(item => {
+//     if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+//         // код для мобильных устройств
+//         item.classList.add('_ios')
+//     } else {
+//         // код для обычных устройств
+//         item.classList.remove('_ios')
+//     }
+// });
+
 cols.forEach(item => {
-    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-        // код для мобильных устройств
-        item.classList.add('_ios')
+    const isIOS = /iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent) && 'ontouchend' in document;
+
+    if (isIOS) {
+        // Код для пристроїв iOS
+        item.classList.add('_ios');
     } else {
-        // код для обычных устройств
-        item.classList.remove('_ios')
+        // Код для інших пристроїв
+        item.classList.remove('_ios');
     }
 });
 
