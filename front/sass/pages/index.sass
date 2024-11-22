@@ -92,11 +92,9 @@ body
     height: 260px
     right: 10%
     bottom: 100px
-
   &__overlay
     background: rgba(12, 24, 37, 0.85)
     display: flex
-    //display: none
     backdrop-filter: blur(5px)
     justify-content: center
     align-items: center
@@ -222,7 +220,6 @@ body
       text-shadow: 0px 3.314px 3.314px rgba(0, 0, 0, 0.25)
       &:hover
         cursor: pointer
-
   &__popup-logo
     background: url("../img/logo.png") no-repeat 0 0/contain
     width: 215px
@@ -277,10 +274,8 @@ body
         position: relative
       &::before
         content: attr(data-before)
-        //color: transparent
         font-size: inherit
         font-family: inherit
-        //text-shadow: 0px 2px 2px rgba(18, 15, 10, 0.80)
         color: $purple
         z-index: 1
         position: absolute
@@ -289,14 +284,11 @@ body
         left: 0
         top: 0
         text-transform: uppercase
-        //-webkit-text-stroke-width: 21px
         -webkit-text-stroke-width: calc((1em / 100) * 21)
-
       &::after
         content: attr(data-after)
         font-size: inherit
         font-family: inherit
-        //-webkit-text-stroke-width: 21px
         -webkit-text-stroke-width: calc((1em / 100) * 21)
         color: $purple
         z-index: 1
@@ -314,13 +306,8 @@ body
       left: 33%
       transform: translateX(-50%)
       z-index: 1
-      //picture
-      //  height: 100%
-      //  position: absolute
-      //  top: 0
     &-wrapper
       transform-origin: right center
-      //transform: scale(.95)
       position: relative
       z-index: 4
       display: flex
@@ -341,29 +328,21 @@ body
   animation: 1.2s infinite pulse-btn ease-in-out
   @media screen and (max-width: 600px) and (orientation: portrait)
     animation: 1.2s infinite pulse-btn-mob ease-in-out
-
 .land__image-main
   animation: 1.7s infinite zevs-drop ease
-
-//slots-styles
-
 .btn-text
   position: absolute
   top: -160px
   left: 0
-
 .icon
   width: 100%
   height: 100%
-  /*animation: wiggle 0.4s linear infinite;*/
   &-wrap
     width: 112px
     height: 112px
     display: inline-block
     z-index: 10
     position: relative
-    //&:not(:last-child)
-    //  margin-bottom: 12px
     &::before
       content: ""
       display: block
@@ -388,22 +367,6 @@ body
     background:  url("../img/slots/casino-mob.png") no-repeat 50% 0%/contain
   @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
     background:  url("../img/slots/casino-mob.png") no-repeat 50% 0/contain
-  //&::before
-  //  content: ''
-  //  position: absolute
-  //  width: 100%
-  //  height: 100%
-  //  top: 0
-  //  left: 0
-  //  z-index: 10
-  //  @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 451px)
-  //    background:  url('../img/slots/casino-desc-frame.png') no-repeat 50% 0/contain
-  //  @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
-  //    background:   url('../img/slots/casino-desc-frame.png') no-repeat 50% 0/contain
-  //  @media screen and (max-width: 600px) and (orientation: portrait)
-  //    background:  url("../img/slots/casino-mob-frame.png") no-repeat 50% 0%/contain
-  //  @media (max-width: 950px) and (orientation: landscape) and (max-height: 450px)
-  //    background:  url("../img/slots/casino-mob-frame.png") no-repeat 50% 0/contain
 .window
   position: relative
   left: 0
@@ -425,17 +388,6 @@ body
   &.afterSpin, &.afterSecondSpin
     &::before
       opacity: 1
-    //&::after
-    //  content: ""
-    //  display: block
-    //  width: 89%
-    //  height: 90%
-    //  position: absolute
-    //  z-index: 8
-    //  background: url("../img/slots/winFirstDecor.png") no-repeat 0 0/contain
-    //  top: 150px
-    //  left: 50px
-    //  animation: clipLeftToRight 1.5s ease-in-out
     .icon
       opacity: .1
       transition: opacity .4s ease-in-out
@@ -457,10 +409,6 @@ body
         &::before
           background: url("../img/slots/win8.png") no-repeat 0 0/contain
   &.afterSecondSpin
-    //&::after
-    //  background: url("../img/slots/winSecondDecor.png") no-repeat 0 0/contain
-    //  top: 130px
-    //  left: 38px
     .icon
       &-wrap
         &::before
@@ -617,22 +565,6 @@ body
     opacity: 1
   100%
     opacity: 0
-//
-//@keyframes zevs
-//  0%
-//    transform: translateX(-50%) translateY(-10px) scale(.85)
-//  50%
-//    transform: translateX(-50%) translateY(10px) scale(.85)
-//  100%
-//    transform: translateX(-50%) translateY(-10px) scale(.85)
-//
-//@keyframes zevs-tab
-//  0%
-//    transform: translateY(-10px)
-//  50%
-//    transform: translateY(10px)
-//  100%
-//    transform: translateY(-10px)
 
 @keyframes lamps-light
   0%
